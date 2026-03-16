@@ -113,6 +113,13 @@ if command -v just; then
   just --completions nushell > ~/.config/nushell/completions/just.nu
 fi
 
+log "Checking if jj is installed..."
+if command -v jj; then
+  log "Installing jj completions for nushell..."
+  mkdir -p ~/.config/nushell/completions
+  jj util completion nushell > ~/.config/nushell/completions/jj.nu
+fi
+
 if [ "$BOOTSTRAP_PLATFORM" = "false" ]; then
   log-success "Success!"
   exit 0

@@ -10,8 +10,6 @@ $env.config.buffer_editor = "hx"
 
 $env.LS_COLORS = (vivid generate catppuccin-latte)
 
-alias git = jj
-
 alias hxn = config nu
 alias hxd = hx ~/src/dotfiles/
 
@@ -27,8 +25,6 @@ alias update = ^~/src/dotfiles/bin/update.sh
 
 $env.PATH = ($env.PATH | append "~/.cargo/bin")
 
-alias jjst = jj status
-alias jjd = jj diff
-
+source jj.nu
 source ~/.zoxide.nu
 source ~/.config/nushell/completions/just.nu
