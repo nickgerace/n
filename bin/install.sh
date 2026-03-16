@@ -106,6 +106,13 @@ if command -v mise; then
   link "$DOTFILES_REPO/mise/config.toml" "$HOME/.config/mise/config.toml"
 fi
 
+log "Checking if just is installed..."
+if command -v just; then
+  log "Installing just completions for nushell..."
+  mkdir -p ~/.config/nushell/completions
+  just --completions nushell > ~/.config/nushell/completions/just.nu
+fi
+
 if [ "$BOOTSTRAP_PLATFORM" = "false" ]; then
   log-success "Success!"
   exit 0

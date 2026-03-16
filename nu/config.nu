@@ -31,3 +31,4 @@ alias jjst = jj status
 alias jjd = jj diff
 
 source ~/.zoxide.nu
+source ~/.config/nushell/completions/just.nu
