@@ -12,3 +12,7 @@ def jj-email-update-repo [email: string] {
   jj config set --repo user.email $"($email)"
   jj metaedit --update-author
 }
+
+def jjfold [] {
+    ls ~/src | where type == dir | each { |d| print $d.name; cd $d.name; print (jj status); print "---" } | ignore
+}

@@ -120,6 +120,11 @@ if command -v jj; then
   jj util completion nushell > ~/.config/nushell/completions/jj.nu
 fi
 
+log "Checking if zoxide is installed..."
+if command -v zoxide; then
+  zoxide init nushell > ~/.config/nushell/completions/zoxide.nu
+fi
+
 if [ "$BOOTSTRAP_PLATFORM" = "false" ]; then
   log-success "Success!"
   exit 0

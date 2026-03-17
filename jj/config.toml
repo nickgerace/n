@@ -1,0 +1,9 @@
+[user]
+name = "Nick Gerace"
+email = "nickagerace@gmail.com"
+
+[ui]
+editor = "hx"
+
+[templates]
+git_push_bookmark = '"nick/push-" ++ change_id.short()'
