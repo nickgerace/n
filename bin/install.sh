@@ -88,7 +88,7 @@ link "$DOTFILES_REPO/bat/themes/catppuccin-latte.tmTheme" "$HOME/.config/bat/the
 link "$DOTFILES_REPO/bat/themes/catppuccin-mocha.tmTheme" "$HOME/.config/bat/themes/catppuccin-mocha.tmTheme"
 link "$DOTFILES_REPO/fastfetch/config.jsonc" "$HOME/.config/fastfetch/config.jsonc"
 link "$DOTFILES_REPO/gfold/config.toml" "$HOME/.config/gfold.toml"
-link "$DOTFILES_REPO/ghostty/config" "$HOME/.config/ghostty/config"
+link "$DOTFILES_REPO/ghostty/config.ghostty" "$HOME/.config/ghostty/config.ghostty"
 link "$DOTFILES_REPO/helix/config.toml" "$HOME/.config/helix/config.toml"
 link "$DOTFILES_REPO/helix/languages.toml" "$HOME/.config/helix/languages.toml"
 link "$DOTFILES_REPO/jj/theme.toml" "$HOME/.config/jj/conf.d/theme.toml"
