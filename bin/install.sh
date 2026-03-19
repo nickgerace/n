@@ -78,6 +78,7 @@ function link {
     mkdir -p "$DIRNAME"
   fi
 
+  log "Linking: $1 --> $2"
   ln -s "$1" "$2"
 }
 
@@ -91,6 +92,7 @@ link "$DOTFILES_REPO/gfold/config.toml" "$HOME/.config/gfold.toml"
 link "$DOTFILES_REPO/ghostty/config.ghostty" "$HOME/.config/ghostty/config.ghostty"
 link "$DOTFILES_REPO/helix/config.toml" "$HOME/.config/helix/config.toml"
 link "$DOTFILES_REPO/helix/languages.toml" "$HOME/.config/helix/languages.toml"
+link "$DOTFILES_REPO/jj/config.toml" "$HOME/.config/jj/config.toml"
 link "$DOTFILES_REPO/jj/theme.toml" "$HOME/.config/jj/conf.d/theme.toml"
 
 log "Checking if bat is installed..."
