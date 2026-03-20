@@ -15,6 +15,8 @@ alias update = ^~/src/dotfiles/bin/update.sh
 
 $env.LS_COLORS = (vivid generate catppuccin-latte)
 
+source "~/.cargo/env.nu"
+
 source jj.nu
 source catppuccin_latte.nu
 

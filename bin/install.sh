@@ -82,6 +82,32 @@ function link {
   ln -s "$1" "$2"
 }
 
+if [ "$BOOTSTRAP_PLATFORM" = "true" ]; then
+  log "Checking if cargo is installed via rustup..."
+  if ! command -v cargo; then
+    log "Installing Rust via rustup..."
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+
+    log "Setting cargo env for this script..."
+    . "$HOME/.cargo/env"
+
+    log "Installing rust-analzyer via rustup..."
+    rustup component add rust-analyzer
+  fi
+
+  log "Checking if homebrew is installed..."
+  if ! command -v brew; then
+    log-error "could not install packages: homebrew is not installed"
+    exit 1
+  fi
+
+  log "Setting up brew taps..."
+  brew tap philocalyst/tap
+
+  log "Installing brew packages..."
+  xargs brew install <"$DOTFILES_REPO/pkgs/brew-base.lst"
+fi
+
 log "Setting up dotfiles..."
 
 link "$DOTFILES_REPO/bat/config" "$HOME/.config/bat/config"
@@ -124,32 +150,8 @@ fi
 
 log "Checking if zoxide is installed..."
 if command -v zoxide; then
+  log "Installing zoxide completions for nushell..."
   zoxide init nushell > ~/.config/nushell/completions/zoxide.nu
 fi
-
-if [ "$BOOTSTRAP_PLATFORM" = "false" ]; then
-  log-success "Success!"
-  exit 0
-fi
-
-log "Checking if cargo is installed via rustup..."
-if ! command -v cargo; then
-  log "Installing Rust..."
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
-  rustup component add rust-analyzer
-  source "$HOME/.cargo/env"
-fi
-
-log "Checking if homebrew is installed..."
-if ! command -v brew; then
-  log-error "could not install packages: homebrew is not installed"
-  exit 1
-fi
-
-log "Setting up brew taps..."
-brew tap philocalyst/tap
-
-log "Installing brew packages..."
-xargs brew install <"$DOTFILES_REPO/pkgs/brew-base.lst"
 
 log-success "Success!"
