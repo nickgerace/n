@@ -4,7 +4,7 @@
 [![Nushell](https://img.shields.io/badge/Nushell-EFF1F5?style=for-the-badge&logo=nushell&logoColor=4c4f69)](https://nushell.sh/)
 [![Ghostty](https://img.shields.io/badge/Ghostty-EFF1F5?style=for-the-badge&logo=ghostty&logoColor=4c4f69)](https://ghostty.org/)
 [![jj](https://img.shields.io/badge/Jujutsu_(jj)-EFF1F5?style=for-the-badge&logoColor=4c4f69)](https://jj-vcs.dev/)
-[![Iosevka](https://img.shields.io/badge/Iosevka-EFF1F5?style=for-the-badge&logoColor=4c4f69)](https://typeof.net/Iosevka/)
+[![Berkeley Mono](https://img.shields.io/badge/Iosevka-EFF1F5?style=for-the-badge&logoColor=4c4f69)](https://usgraphics.com/products/berkeley-mono)
 
 [![Catppuccin Latte](https://github.com/catppuccin/catppuccin/blob/main/assets/palette/latte.png)](https://catppuccin.com/)
 

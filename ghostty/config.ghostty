@@ -1,5 +1,5 @@
 command = "/opt/homebrew/bin/nu --config ~/src/dotfiles/nu/config.nu"
-font-family = "Iosevka"
+font-family = Berkeley Mono
 font-size = 16
 macos-option-as-alt = true
 quit-after-last-window-closed = true
