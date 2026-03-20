@@ -66,12 +66,12 @@ update
 
 This is a list of relevant tools who are reliant on the theme:
 
-- `bat`
 - `fastfetch`
 - `ghostty`
 - `helix`
 - `jj`
 - `mise` _(no official support [yet](https://github.com/jdx/mise/discussions/8542), but may need to switch based one theme)_
+- `nu`
 
 ## Disclaimer
 

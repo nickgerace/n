@@ -110,9 +110,6 @@ fi
 
 log "Setting up dotfiles..."
 
-link "$DOTFILES_REPO/bat/config" "$HOME/.config/bat/config"
-link "$DOTFILES_REPO/bat/themes/catppuccin-latte.tmTheme" "$HOME/.config/bat/themes/catppuccin-latte.tmTheme"
-link "$DOTFILES_REPO/bat/themes/catppuccin-mocha.tmTheme" "$HOME/.config/bat/themes/catppuccin-mocha.tmTheme"
 link "$DOTFILES_REPO/fastfetch/config.jsonc" "$HOME/.config/fastfetch/config.jsonc"
 link "$DOTFILES_REPO/gfold/config.toml" "$HOME/.config/gfold.toml"
 link "$DOTFILES_REPO/ghostty/config.ghostty" "$HOME/.config/ghostty/config.ghostty"
@@ -120,12 +117,6 @@ link "$DOTFILES_REPO/helix/config.toml" "$HOME/.config/helix/config.toml"
 link "$DOTFILES_REPO/helix/languages.toml" "$HOME/.config/helix/languages.toml"
 link "$DOTFILES_REPO/jj/config.toml" "$HOME/.config/jj/config.toml"
 link "$DOTFILES_REPO/jj/theme.toml" "$HOME/.config/jj/conf.d/theme.toml"
-
-log "Checking if bat is installed..."
-if command -v bat; then
-  log "Rebuilding bat cache..."
-  bat cache --build
-fi
 
 log "Checking if mise is installed..."
 if command -v mise; then

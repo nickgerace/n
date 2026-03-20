@@ -1,8 +1,6 @@
-theme = "Catppuccin Latte"
-# theme = "Catppuccin Mocha"
-font-family = "Iosevka"
-font-size = 15
-macos-option-as-alt = true
-title = Ghostty
-quit-after-last-window-closed = true
 command = "/opt/homebrew/bin/nu --config ~/src/dotfiles/nu/config.nu"
+font-family = "Iosevka"
+font-size = 16
+macos-option-as-alt = true
+quit-after-last-window-closed = true
+theme = "Catppuccin Latte"
