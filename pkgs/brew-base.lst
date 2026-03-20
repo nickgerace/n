@@ -33,6 +33,7 @@ lolcat
 make
 mise
 nushell
+protobuf
 ripgrep
 rust-analyzer
 shellcheck
