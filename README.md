@@ -37,25 +37,21 @@ Once the initial `just` recipe is ran, you can update packages and more using th
 just update
 ```
 
-Alternatively, if you reload your shell, you can use the provided alias that runs the same script under the hood.
+If you reload your shell, you can use the provided alias that runs the same script under the hood.
+This is the primary method for updating packages.
 
 ```shell
 update
 ```
 
 > [!NOTE]
-> The above commands only update packages with the current dotfiles in place.
-> If you'd like to re-link dotfiles, run `just install` again.
+> The underlying update script only updates packages with the current dotfiles in place.
+> If there are new or deleted dotfiles, you will need to run the installer again (i.e. `just install`).
 
-## Theme Implications
+## Changing Theme
 
-This is a minimum list of tools whose configurations are theme-reliant:
-
-- `fastfetch`
-- `ghostty`
-- `helix`
-- `mise`
-- `nu`
+If the theme is changed, the configurations for `fastfetch`, `ghostty`, `helix` and `nu` likely will need to be changed.
+The theme for `mise` can likely remain the same, but should be checked too.
 
 There are other tools affected by the theme, but they derive their colors through other configurations, such as `LS_COLORS`.
 In fact, the `LS_COLORS` environment variable is set in the `nu` configuration.
