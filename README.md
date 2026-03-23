@@ -2,13 +2,6 @@
 
 My dotfiles and configurations.
 
-- Editor: [Helix](https://helix-editor.com)
-- Font: [Berkeley Mono](https://usgraphics.com/products/berkeley-mono)
-- Shell: [Nushell](https://nushell.sh)
-- Terminal: [Ghostty](https://ghostty.org)
-- Theme: [Rosé Pine Dawn](https://rosepinetheme.com)
-- Version Control System: [Jujutsu](https://jj-vcs.dev)
-
 ## Quickstart
 
 Before starting, ensure that you have `bash`, `just` and `nu` installed on your macOS or Linux system.
@@ -29,7 +22,7 @@ By default, it will only install dotfiles and load configurations based on them.
 Depending on your platform, you may be presented with an option to install packages and perform additional setup.
 That is entirely optional.
 
-```bash
+```shell
 just install
 ```
 
@@ -40,13 +33,13 @@ That being said: *caution is advised*.
 
 Once the initial `just` recipe is ran, you can update packages and more using the `update` recipe.
 
-```bash
+```shell
 just update
 ```
 
 Alternatively, if you reload your shell, you can use the provided alias that runs the same script under the hood.
 
-```bash
+```shell
 update
 ```
 
