@@ -7,72 +7,38 @@
   },
   "modules": [
     {
-      "key": "OS",
       "type": "os"
     },
     {
-      "key": "Kernel",
       "type": "kernel"
     },
     {
-      "key": "CPU",
+      "type": "host"
+    },
+    {
       "type": "cpu"
     },
     {
-      "key": "GPU",
       "type": "gpu"
     },
     {
-      "key": "RAM",
       "type": "memory",
       "format": "{2}"
     },
     {
-      "key": "Filesystem",
       "type": "disk",
       "folders": "/",
       "format": "{9}"
     },
-    "separator",
     {
-      "key": "Shell",
+      "type": "terminal"
+    }, 
+    {
       "type": "shell"
     },
     {
-      "key": "DE",
-      "type": "de"
-    },
-    {
-      "key": "Host",
-      "type": "host"
-    },
-    "separator",
-    {
-      "key": "Datetime",
-      "type": "datetime",
-      "format": "{9} {11} {6} {1} - {14}:{18} {22} ({21})"
-    },
-    {
-      "key": "Fastfetch",
-      "type": "version",
-      "format": "{2}"
-    },
-    {
-      "key": "Colors",
-      "type": "colors",
-      "symbol": "circle"
-    },
-    "separator",
-    {
-      "type": "custom",
-      "key": "Terminal",
-      "format": "Ghostty"
-    },
-    {
-      "type": "custom",
-      "key": "Editor",
-      "format": "Helix (hx)"
-    },
+      "type": "editor"
+    }, 
     {
       "type": "custom",
       "key": "Version Control",
@@ -86,7 +52,19 @@
     {
       "type": "custom",
       "key": "Theme",
-      "format": "Catppuccin Latte"
+      "format": "Rosé Pine Dawn"
+    },
+    {
+      "type": "colors",
+      "symbol": "circle"
+    },
+    {
+      "type": "datetime",
+      "format": "{9} {11} {6} {1} - {14}:{18} {22} ({21})"
+    },
+    {
+      "type": "version",
+      "format": "{2}"
     },
   ]
 }

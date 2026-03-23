@@ -12,9 +12,9 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.local/bin')
 
 alias update = ^~/src/dotfiles/bin/update.sh
 
-$env.LS_COLORS = (vivid generate catppuccin-latte)
+$env.LS_COLORS = (vivid generate rose-pine-dawn)
 
-source catppuccin_latte.nu
+source ~/.config/nushell/theme.toml
 source completions.nu
 source jj.nu
 source rust.nu

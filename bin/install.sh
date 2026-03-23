@@ -116,7 +116,9 @@ link "$DOTFILES_REPO/ghostty/config.ghostty" "$HOME/.config/ghostty/config.ghost
 link "$DOTFILES_REPO/helix/config.toml" "$HOME/.config/helix/config.toml"
 link "$DOTFILES_REPO/helix/languages.toml" "$HOME/.config/helix/languages.toml"
 link "$DOTFILES_REPO/jj/config.toml" "$HOME/.config/jj/config.toml"
-link "$DOTFILES_REPO/jj/theme.toml" "$HOME/.config/jj/conf.d/theme.toml"
+
+log "Downloading nushell theme..."
+wget -O "$HOME/.config/nushell/theme.toml" https://raw.githubusercontent.com/nushell/nu_scripts/refs/heads/main/themes/nu-themes/rose-pine-dawn.nu
 
 log "Checking if mise is installed..."
 if command -v mise; then

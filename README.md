@@ -1,26 +1,21 @@
 # Dotfiles
 
-[![Helix](https://img.shields.io/badge/Helix-EFF1F5?style=for-the-badge&logo=helix&logoColor=4c4f69)](https://helix-editor.com/)
-[![Nushell](https://img.shields.io/badge/Nushell-EFF1F5?style=for-the-badge&logo=nushell&logoColor=4c4f69)](https://nushell.sh/)
-[![Ghostty](https://img.shields.io/badge/Ghostty-EFF1F5?style=for-the-badge&logo=ghostty&logoColor=4c4f69)](https://ghostty.org/)
-[![jj](https://img.shields.io/badge/Jujutsu_(jj)-EFF1F5?style=for-the-badge&logoColor=4c4f69)](https://jj-vcs.dev/)
-[![Berkeley Mono](https://img.shields.io/badge/Berkeley_Mono-EFF1F5?style=for-the-badge&logoColor=4c4f69)](https://usgraphics.com/products/berkeley-mono)
+My dotfiles and configurations.
 
-[![Catppuccin Latte](https://github.com/catppuccin/catppuccin/blob/main/assets/palette/latte.png)](https://catppuccin.com/)
-
-[@nickgerace](https://github.com/nickgerace)'s dotfiles.
+- Editor: [Helix](https://helix-editor.com)
+- Font: [Berkeley Mono](https://usgraphics.com/products/berkeley-mono)
+- Shell: [Nushell](https://nushell.sh)
+- Terminal: [Ghostty](https://ghostty.org)
+- Theme: [Rosé Pine Dawn](https://rosepinetheme.com)
+- Version Control System: [Jujutsu](https://jj-vcs.dev)
 
 ## Quickstart
 
-Before starting, ensure that you have the following installed on your macOS or Linux system:
-
-- `bash`
-- `just`
-- `nu` _(see the tip below)_
+Before starting, ensure that you have `bash`, `just` and `nu` installed on your macOS or Linux system.
 
 > [!TIP]
-> If you are on macOS, have `brew` installed and want to install packages when setting up dotfiles, you do not need to install `nu`.
-> It will be installed during setup.
+> If you are on macOS, have `brew` installed and choose to install packages during installation, you do not need to have `nu` installed.
+> It will be installed during setup via `brew`.
 
 You will also need to ensure that this repository resides in the `$HOME/src/` directory.
 You may need to create it by executing `mkdir $HOME/src`.
@@ -59,19 +54,18 @@ update
 > The above commands only update packages with the current dotfiles in place.
 > If you'd like to re-link dotfiles, run `just install` again.
 
-## Theme
+## Theme Implications
 
-- **Current:** [Catppuccin Latte](https://catppuccin.com) (Light)
-- **Alternative:** [Catppuccin Mocha](https://catppuccin.com) (Dark)
-
-This is a list of relevant tools who are reliant on the theme:
+This is a minimum list of tools whose configurations are theme-reliant:
 
 - `fastfetch`
 - `ghostty`
 - `helix`
-- `jj`
-- `mise` _(no official support [yet](https://github.com/jdx/mise/discussions/8542), but may need to switch based one theme)_
+- `mise`
 - `nu`
+
+There are other tools affected by the theme, but they derive their colors through other configurations, such as `LS_COLORS`.
+In fact, the `LS_COLORS` environment variable is set in the `nu` configuration.
 
 ## Disclaimer
 

@@ -3,4 +3,4 @@ font-family = Berkeley Mono
 font-size = 16
 macos-option-as-alt = true
 quit-after-last-window-closed = true
-theme = "Catppuccin Latte"
+theme = dark:Rose Pine Moon,light:Rose Pine Dawn

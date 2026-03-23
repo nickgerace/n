@@ -32,6 +32,7 @@ lolcat
 make
 mise
 nushell
+pkgconf
 protobuf
 ripgrep
 rust-analyzer
