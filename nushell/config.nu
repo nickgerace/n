@@ -1,3 +1,6 @@
+# This must come before the first "source" call.
+use ~/.config/nushell/mise.nu
+
 $env.config.show_banner = false
 
 $env.EDITOR = "hx"
