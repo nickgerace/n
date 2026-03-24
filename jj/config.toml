@@ -6,4 +6,4 @@ email = "nickagerace@gmail.com"
 editor = "hx"
 
 [templates]
-git_push_bookmark = '"nick/push-" ++ change_id.short()'
+git_push_bookmark = '"nickgerace/push-" ++ change_id.short()'
