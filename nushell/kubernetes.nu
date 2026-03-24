@@ -1,9 +1,19 @@
 alias k = kubectl
 
-alias kgp = kubectl get pods
-alias kgpa = kubectl get pods -A
 alias kgn = kubectl get nodes
 
-def kubectl-dead-pods [] {
-  kubectl get pods -A | rg -v 'Running|Completed'
+def kgpa [watch?: bool = false] {
+  if $watch {
+    ^watch 'kubectl get pods -A'
+  } else {
+    kubectl get pods -A
+  }
+}
+
+def kubectl-dead-pods [watch?: bool = false] {
+  if $watch {
+    ^watch 'kubectl get pods -A | rg -v "Running|Completed"'
+  } else {
+    kubectl get pods -A | rg -v 'Running|Completed'
+  }
 }
