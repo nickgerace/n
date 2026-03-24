@@ -19,7 +19,8 @@ $env.LS_COLORS = (vivid generate rose-pine-dawn)
 
 source ~/.config/nushell/theme.toml
 
-source kubernetes.nu
+source brew.nu
 source completions.nu
 source jj.nu
+source kubernetes.nu
 source rust.nu
