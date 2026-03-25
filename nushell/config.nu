@@ -22,6 +22,7 @@ source fastfetch.nu
 source ghostty.nu
 source jj.nu
 source kubernetes.nu
+source npn.nu
 source rust.nu
 source trivy.nu
 
