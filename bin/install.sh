@@ -127,24 +127,4 @@ if command -v mise; then
   link "$DOTFILES_REPO/mise/config.toml" "$HOME/.config/mise/config.toml"
 fi
 
-log "Checking if just is installed..."
-if command -v just; then
-  log "Installing just completions for nushell..."
-  mkdir -p ~/.config/nushell/completions
-  just --completions nushell > ~/.config/nushell/completions/just.nu
-fi
-
-log "Checking if jj is installed..."
-if command -v jj; then
-  log "Installing jj completions for nushell..."
-  mkdir -p ~/.config/nushell/completions
-  jj util completion nushell > ~/.config/nushell/completions/jj.nu
-fi
-
-log "Checking if zoxide is installed..."
-if command -v zoxide; then
-  log "Installing zoxide completions for nushell..."
-  zoxide init nushell > ~/.config/nushell/completions/zoxide.nu
-fi
-
 log-success "Success!"

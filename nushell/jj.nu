@@ -1,5 +1,3 @@
-source ~/.config/nushell/completions/jj.nu
-
 alias git = jj
 
 alias jjst = jj status

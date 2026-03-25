@@ -1,26 +1,20 @@
-# This must come before the first "source" call.
+# The "use" files created from "env.nu" (must come before the first source call)
 use ~/.config/nushell/mise.nu
 
-$env.config.show_banner = false
+# The "source" files created from "env.nu"
+source ~/.config/nushell/jj.nu
+source ~/.config/nushell/just.nu
+source ~/.config/nushell/zoxide.nu
 
-$env.EDITOR = "hx"
-$env.VISUAL = "hx"
-$env.config.buffer_editor = "hx"
+# Loaded theme from the install script
+source ~/.config/nushell/theme.toml
 
 alias hxn = config nu
 alias hxd = hx ~/src/dotfiles/
-
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin')
-$env.PATH = ($env.PATH | split row (char esep) | prepend '~/.local/bin')
-
 alias update = ^~/src/dotfiles/bin/update.sh
 
-$env.LS_COLORS = (vivid generate rose-pine-dawn)
-
-source ~/.config/nushell/theme.toml
-
+# Load the remaining nushell files in the repository
 source brew.nu
-source completions.nu
 source jj.nu
 source kubernetes.nu
 source rust.nu
