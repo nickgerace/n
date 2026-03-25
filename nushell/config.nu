@@ -17,10 +17,18 @@ alias update = ^~/src/dotfiles/bin/update.sh
 source brew.nu
 source diff.nu
 source docker.nu
+source eza.nu
+source fastfetch.nu
+source ghostty.nu
 source jj.nu
 source kubernetes.nu
 source rust.nu
 source trivy.nu
+
+# Unsupported integrations that were supported in zsh:
+# - brew
+# - fnm
+# - fzf
 
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/opt/curl/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/opt/make/libexec/gnubin')
