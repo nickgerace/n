@@ -3,8 +3,13 @@ alias git = jj
 alias jjst = jj status
 alias jjd = jj diff
 
-alias jjl = jj bookmark list
-alias jjl-all = jj bookmark list --all-remotes
+def jjl [all?: bool = false] {
+  if $all {
+    jj bookmark list --all-remotes
+  } else {
+    jj bookmark list
+  }
+}
 
 def jj-email-update-repo [email: string] {
   jj config set --repo user.email $"($email)"
