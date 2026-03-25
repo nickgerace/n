@@ -15,6 +15,11 @@ alias update = ^~/src/dotfiles/bin/update.sh
 
 # Load the remaining nushell files in the repository
 source brew.nu
+source diff.nu
 source jj.nu
 source kubernetes.nu
 source rust.nu
+
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/opt/curl/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/opt/make/libexec/gnubin')
+
