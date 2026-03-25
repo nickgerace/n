@@ -22,8 +22,9 @@ source fastfetch.nu
 source ghostty.nu
 source jj.nu
 source kubernetes.nu
-source npn.nu
+source npm.nu
 source rust.nu
+source shfmt.nu
 source trivy.nu
 
 # Unsupported integrations that were supported in zsh:
@@ -33,4 +34,4 @@ source trivy.nu
 
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/opt/curl/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/opt/make/libexec/gnubin')
-
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/opt/gnu-sed/libexec/gnubin')
