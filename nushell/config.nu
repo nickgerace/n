@@ -26,6 +26,7 @@ source npm.nu
 source rust.nu
 source shfmt.nu
 source trivy.nu
+source zoxide.nu
 
 # Unsupported integrations that were supported in zsh:
 # - brew
