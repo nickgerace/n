@@ -76,6 +76,11 @@ if command -v npm && [ -d "$HOME/.npm-global" ]; then
   popd
 fi
 
+if command -v claude && [ -f "$HOME/.local/bin/claude" ]; then
+  log "Updating claude..."
+  claude update
+fi
+
 # Leave the temporary directory
 popd
 
