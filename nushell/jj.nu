@@ -1,7 +1,16 @@
 alias git = jj
 
 alias jjst = jj status
-alias jjd = jj diff
+
+def jjd [language?: string] {
+  if $language == null {
+    jj diff
+  } else if $language == "rust" {
+    jj diff -- 'glob:**/*.rs'
+  } else {
+    'language option(s): rust'
+  }
+}
 
 def jjl [all?: bool = false] {
   if $all {
