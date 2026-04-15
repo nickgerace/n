@@ -2,13 +2,15 @@ alias git = jj
 
 alias jjst = jj status
 
-def jjd [language?: string] {
-  if $language == null {
-    jj diff
-  } else if $language == "rust" {
+def jjd [--rust, file?: string] {
+  if $rust and $file != null {
+    jj diff $file -- 'glob:**/*.rs'
+  } else if $rust {
     jj diff -- 'glob:**/*.rs'
+  } else if $file != null {
+    jj diff $file
   } else {
-    'language option(s): rust'
+    jj diff
   }
 }
 
@@ -26,6 +28,7 @@ def jj-email-update-repo [email: string] {
 }
 
 alias jj-fetch = jj git fetch --all-remotes
+alias jj-show-trunk = jj log -r 'ancestors(trunk(), 25)'
 
 def jj-rebase [branch: string, main: string] {
   jj rebase -b $branch -d $main
