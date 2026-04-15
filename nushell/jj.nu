@@ -28,7 +28,10 @@ def jj-email-update-repo [email: string] {
 }
 
 alias jj-fetch = jj git fetch --all-remotes
-alias jj-show-trunk = jj log -r 'ancestors(trunk(), 25)'
+
+def jj-show-trunk [n: int = 25] {
+  jj log -r $"ancestors\(trunk\(\), ($n)\)"
+}
 
 def jj-rebase [branch: string, main: string] {
   jj rebase -b $branch -d $main
