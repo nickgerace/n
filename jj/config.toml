@@ -6,4 +6,33 @@ email = "nickagerace@gmail.com"
 editor = "hx"
 
 [templates]
-git_push_bookmark = '"nickgerace/push-" ++ change_id.short()'
+git_push_bookmark = '''
+"nickgerace/"
+++ word(change_id.short().substr(0, 1))
+++ "-"
+++ word(change_id.short().substr(1, 2))
+++ "-"
+++ word(change_id.short().substr(2, 3))
+++ "-"
+++ word(change_id.short().substr(3, 4))
+'''
+
+[template-aliases]
+'word(c)' = '''
+if(c == "k", "kilo",
+if(c == "l", "lima",
+if(c == "m", "mike",
+if(c == "n", "november",
+if(c == "o", "oscar",
+if(c == "p", "papa",
+if(c == "q", "quebec",
+if(c == "r", "romeo",
+if(c == "s", "sierra",
+if(c == "t", "tango",
+if(c == "u", "uniform",
+if(c == "v", "victor",
+if(c == "w", "whiskey",
+if(c == "x", "xray",
+if(c == "y", "yankee",
+"zulu")))))))))))))))
+'''
