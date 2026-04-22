@@ -3,6 +3,7 @@ set -eu
 
 BOOTSTRAP_PLATFORM="false"
 DOTFILES_REPO="$HOME/src/dotfiles"
+OS=$(uname -s)
 
 LOG_FORMAT_BOLD=$(tput bold)
 LOG_FORMAT_GREEN=$(tput setaf 2)
@@ -18,7 +19,7 @@ function log-success {
 }
 
 function log-error {
-  echo "${LOG_FORMAT_BOLD}${LOG_FORMAT_RED}Error: $1${LOG_FORMAT_RESET}" >&2
+  echo "${LOG_FORMAT_BOLD}${LOG_FORMAT_RED}error: $1${LOG_FORMAT_RESET}" >&2
 }
 
 log "Welcome to @nickgerace's dotfiles setup and platform bootstrap script!"
@@ -28,7 +29,12 @@ if [ $EUID -eq 0 ]; then
   exit 1
 fi
 
-if [ "$(uname -s)" = "Darwin" ] && [ "$(uname -m)" = "arm64" ]; then
+if [ "$OS" != "Darwin" ] && [ "$OS" != "Linux" ]; then
+  log-error "unsupported platform found: $OS (only macOS and Linux are supported)"
+  exit 1
+fi
+
+if [ "$OS" = "Darwin" ] && [ "$(uname -m)" = "arm64" ]; then
   while true; do
     read -r -n1 -p "Do you want to install packages in addition to setting up dotfiles? [y/N]: " yn
     case $yn in
@@ -112,10 +118,15 @@ log "Setting up dotfiles..."
 
 link "$DOTFILES_REPO/fastfetch/config.jsonc" "$HOME/.config/fastfetch/config.jsonc"
 link "$DOTFILES_REPO/gfold/config.toml" "$HOME/.config/gfold.toml"
-link "$DOTFILES_REPO/ghostty/config.ghostty" "$HOME/.config/ghostty/config.ghostty"
 link "$DOTFILES_REPO/helix/config.toml" "$HOME/.config/helix/config.toml"
 link "$DOTFILES_REPO/helix/languages.toml" "$HOME/.config/helix/languages.toml"
 link "$DOTFILES_REPO/jj/config.toml" "$HOME/.config/jj/config.toml"
+
+if [ "$OS" = "Darwin" ]; then
+  link "$DOTFILES_REPO/ghostty/config.ghostty" "$HOME/.config/ghostty/config.ghostty"
+elif [ "$OS" = "Linux" ]; then
+  link "$DOTFILES_REPO/experiments/framework/config.ghostty" "$HOME/.config/ghostty/config.ghostty"
+fi
 
 log "Downloading nushell theme..."
 wget -O "$HOME/.config/nushell/theme.toml" https://raw.githubusercontent.com/nushell/nu_scripts/refs/heads/main/themes/nu-themes/rose-pine-dawn.nu

@@ -1,1 +1,2 @@
-alias cd = z
+# FIXME(nick): get this to work.
+# alias cd = z
