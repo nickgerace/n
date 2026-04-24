@@ -6,3 +6,6 @@ update:
 
 format:
     -shfmt -i 2 -w **/*.sh
+
+list:
+    @scripts/list-owned-repos.sh
