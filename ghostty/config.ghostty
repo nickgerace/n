@@ -1,4 +1,4 @@
-command = "/opt/homebrew/bin/nu --env-config ~/src/dotfiles/nushell/env.nu --config ~/src/dotfiles/nushell/config.nu"
+command = "/opt/homebrew/bin/nu --env-config ~/src/n/nushell/env.nu --config ~/src/n/nushell/config.nu"
 font-family = Berkeley Mono
 font-size = 16
 macos-option-as-alt = true

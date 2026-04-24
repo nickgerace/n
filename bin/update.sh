@@ -4,7 +4,7 @@ set -eu
 # Make sure that we aren't relying on a specific environment based on our current working directory
 pushd "$(mktemp -d)"
 
-UPDATE_DOTFILES_REPO="$HOME/src/dotfiles"
+UPDATE_REPO="$HOME/src/n"
 
 LOG_FORMAT_BOLD=$(tput bold)
 LOG_FORMAT_GREEN=$(tput setaf 2)
@@ -70,7 +70,7 @@ fi
 
 if command -v npm && [ -d "$HOME/.npm-global" ]; then
   log "Updating npm packages..."
-  pushd "$UPDATE_DOTFILES_REPO"
+  pushd "$UPDATE_REPO"
   npm set prefix ~/.npm-global
   npm up -g
   popd

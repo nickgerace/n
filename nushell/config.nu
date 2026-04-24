@@ -10,8 +10,8 @@ source ~/.config/nushell/zoxide.nu
 source ~/.config/nushell/theme.toml
 
 alias hxn = config nu
-alias hxd = hx ~/src/dotfiles/
-alias update = ^~/src/dotfiles/bin/update.sh
+alias hxd = hx ~/src/n/
+alias update = ^~/src/n/bin/update.sh
 
 # Load the remaining nushell files in the repository
 source brew.nu
