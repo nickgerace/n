@@ -71,7 +71,7 @@ function link {
   DIRNAME=$(dirname "$2")
 
   if [ -d "$DIRNAME" ]; then
-    if [ -f "$2" ]; then
+    if [ -f "$2" ] || [ -L "$2" ]; then
       rm "$2"
     fi
   elif [ "$HOME" != "$DIRNAME" ]; then
