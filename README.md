@@ -8,7 +8,8 @@ This is my monorepo containing dotfiles, configurations, scripts, experiments, a
 
 [n](https://github.com/nickgerace/n) is inspired by [thoughtpolice/a](https://github.com/thoughtpolice/a) and [xe/x](https://github.com/xe/x).
 I originally used a monorepo in a similar vein many years ago.
-I decided to return to the format to reflect my beliefs and practices in monorepos on the whole.
+I was still new to GitHub at the time, so it's nice, cozy feeling to come full circle.
+I ultimately decided to return to the format to live my beliefs in monorepos as a whole.
 This repository is a continuation of the pre-existing "dotfiles" repo, which was mostly a "spicy dotfiles++" repo anyway.
 
 ## Disclaimer
