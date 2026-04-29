@@ -1,6 +1,7 @@
 # Load the PATH first
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin')
 $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.local/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/bin')
 
 # Editor settings
 $env.EDITOR = "hx"

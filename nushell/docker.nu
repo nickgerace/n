@@ -24,20 +24,20 @@ def docker-run-distro [distro: string] {
 }
 
 def docker-prune-containers [] {
-    docker stop (docker ps -aq)
-    docker rm (docker ps -aq)
+    do -i { docker stop (docker ps -aq) }
+    do -i { docker rm (docker ps -aq) }
 
-    docker volume prune -f
-    docker volume rm (docker volume ls -q)
+    do -i { docker volume prune -f }
+    do -i { docker volume rm (docker volume ls -q) }
 }
 
 def docker-prune-everything [] {
-    docker stop (docker ps -aq)
-    docker rm (docker ps -aq)
+    do -i { docker stop (docker ps -aq) }
+    do -i { docker rm (docker ps -aq) }
 
-    docker rmi (docker images -q)
-    docker system prune -a -f
+    do -i { docker rmi (docker images -q) }
+    do -i { docker system prune -a -f }
 
-    docker volume prune -f
-    docker volume rm (docker volume ls -q)
+    do -i { docker volume prune -f }
+    do -i { docker volume rm (docker volume ls -q) }
 }

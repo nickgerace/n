@@ -40,3 +40,7 @@ def jj-rebase [branch: string, main: string] {
 def jjfold [] {
   ls ~/src | where type == dir | each { |d| print $d.name; cd $d.name; print (jj status); print "---" } | ignore
 }
+
+def jj-change-history [rev: string] {
+  jj evolog -r $rev -p --git
+}
