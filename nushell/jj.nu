@@ -2,13 +2,16 @@ alias git = jj
 
 alias jjst = jj status
 
-def jjd [--include-only-rs-files, --include-cargo-lock, file?: string] {
-  mut parts = []
+def jjd [--glob-only-rs-files, --exclude-rs-files, --include-cargo-lock, file?: string] {
+  if $glob_only_rs_files and $include_cargo_lock {
+    error make {msg: "--glob-only-rs-files and --include-cargo-lock are mutually exclusive"}
+  }
 
+  mut parts = []
   if $file != null {
     $parts = ($parts | append $file)
   }
-  if $include_only_rs_files {
+  if $glob_only_rs_files {
     $parts = ($parts | append 'glob:"**/*.rs"')
   }
   
@@ -17,14 +20,18 @@ def jjd [--include-only-rs-files, --include-cargo-lock, file?: string] {
   } else {
     $parts | str join ' | '
   }
-
-  let args_extended = if $include_cargo_lock or not ((jj root | str trim | path join Cargo.lock) | path exists) {
+  let args = if $include_cargo_lock or not ((jj root | str trim | path join Cargo.lock) | path exists) {
     $args
   } else {
     $"($args) ~ Cargo.lock"
   }
+  let args = if $exclude_rs_files {
+    $"($args) ~ glob:\"**/*.rs\""
+  } else {
+    $args
+  }
 
-  jj diff -- $args_extended
+  jj diff -- $args
 }
 
 def jjl [all?: bool = false] {
