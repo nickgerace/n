@@ -2,16 +2,29 @@ alias git = jj
 
 alias jjst = jj status
 
-def jjd [--rust, file?: string] {
-  if $rust and $file != null {
-    jj diff $file -- 'glob:**/*.rs'
-  } else if $rust {
-    jj diff -- 'glob:**/*.rs'
-  } else if $file != null {
-    jj diff $file
-  } else {
-    jj diff
+def jjd [--include-only-rs-files, --include-cargo-lock, file?: string] {
+  mut parts = []
+
+  if $file != null {
+    $parts = ($parts | append $file)
   }
+  if $include_only_rs_files {
+    $parts = ($parts | append 'glob:"**/*.rs"')
+  }
+  
+  let args = if ($parts | is-empty) {
+    'all()'
+  } else {
+    $parts | str join ' | '
+  }
+
+  let args_extended = if $include_cargo_lock or not ((jj root | str trim | path join Cargo.lock) | path exists) {
+    $args
+  } else {
+    $"($args) ~ Cargo.lock"
+  }
+
+  jj diff -- $args_extended
 }
 
 def jjl [all?: bool = false] {
