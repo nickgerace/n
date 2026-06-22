@@ -52,9 +52,11 @@ while true; do
 done
 
 if command -v brew; then
-  log "Updating brew packages..."
-  brew update
-  brew upgrade
+  log "Running brew update..."
+  brew update -y
+  log "Running brew upgrade..."
+  brew upgrade -y
+  log "Running brew cleanup..."
   brew cleanup
 fi
 
