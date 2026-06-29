@@ -53,7 +53,7 @@ done
 
 if command -v brew; then
   log "Running brew update..."
-  brew update -y
+  brew update
   log "Running brew upgrade..."
   brew upgrade -y
   log "Running brew cleanup..."

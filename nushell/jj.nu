@@ -1,5 +1,3 @@
-alias git = jj
-
 alias jjst = jj status
 
 def jjd [--glob-only-rs-files, --exclude-rs-files, --include-cargo-lock, file?: string] {
