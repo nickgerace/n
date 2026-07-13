@@ -20,6 +20,7 @@ alias update = ^~/src/n/bin/update.sh
 # Load the remaining nushell files in the repository
 const brew_nu = path self brew.nu
 const diff_nu = path self diff.nu
+const direnv_nu = path self direnv.nu
 const docker_nu = path self docker.nu
 const eza_nu = path self eza.nu
 const fastfetch_nu = path self fastfetch.nu
@@ -36,6 +37,7 @@ const zoxide_repo_nu = path self zoxide.nu
 
 source $brew_nu
 source $diff_nu
+source $direnv_nu
 source $docker_nu
 source $eza_nu
 source $fastfetch_nu
