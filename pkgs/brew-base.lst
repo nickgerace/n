@@ -32,7 +32,6 @@ kubernetes-cli
 lolcat
 make
 mise
-nushell
 pgcli
 pkgconf
 protobuf

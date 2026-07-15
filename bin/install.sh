@@ -124,6 +124,7 @@ link "$REPO/helix/config.toml" "$HOME/.config/helix/config.toml"
 link "$REPO/helix/ignore" "$HOME/.config/helix/ignore"
 link "$REPO/helix/languages.toml" "$HOME/.config/helix/languages.toml"
 link "$REPO/jj/config.toml" "$HOME/.config/jj/config.toml"
+link "$REPO/.zshrc" "$HOME/.zshrc"
 
 if [ "$OS" = "Darwin" ]; then
   link "$REPO/ghostty/config.ghostty" "$HOME/.config/ghostty/config.ghostty"
