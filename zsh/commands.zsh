@@ -22,6 +22,8 @@ alias kgn='kubectl get nodes'
 alias cargo-check-all='cargo check --all-targets --all-features'
 alias trivy-scan='trivy image -s "HIGH,CRITICAL"'
 
+alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
+
 if (( $+functions[_kubectl] )); then
   compdef _kubectl k
 fi
