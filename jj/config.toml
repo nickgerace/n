@@ -4,6 +4,10 @@ email = "nickagerace@gmail.com"
 
 [ui]
 editor = "hx"
+diff-formatter = "difft"
+
+[merge-tools.difft]
+diff-args = ["--color=always", "--display=side-by-side", "--width=$width", "$left", "$right"]
 
 [aliases]
 stack = ["log", "-r", "@ | trunk()..@ | trunk()"]

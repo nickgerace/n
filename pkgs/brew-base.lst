@@ -10,6 +10,7 @@ cargo-udeps
 cloc
 cowsay
 curl
+difftastic
 dua-cli
 eza
 fastfetch
