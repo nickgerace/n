@@ -1,5 +1,10 @@
 font-family = Berkeley Mono
-font-size = 16
-macos-option-as-alt = true
-quit-after-last-window-closed = true
+font-size = 14
+font-thicken = true
+adjust-cell-height = 8%
+
 theme = dark:Rose Pine Moon,light:Rose Pine Dawn
+
+macos-option-as-alt = true
+mouse-hide-while-typing = true
+quit-after-last-window-closed = true
