@@ -7,7 +7,26 @@
 - Do not push or fetch commits, branches, tags, etc. unless permitted
 - Default to making all edits in the working copy and do not squash unless permitted
 
-## Rust
+## Issue Trackers (Linear, GitHub, etc.)
+
+You can file issues if explicitly permitted, but any time that you add a comment or a description to an issue, you need to prefix it with "<AGENT>'s notes:" followed by a quote block with your contents.
+This is also true for projects, on platforms like Linear.
+
+Example with claude:
+```
+Claude's notes:
+>  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+```
+
+Example with codex:
+```
+Codex's notes:
+>  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+```
+
+## Code and Comments
+
+### Rust
 
 - Prefer functions and functional approaches over object-oriented ones
 - If the crate uses "thiserror" for error enums and you need to create an error, use it and use "#[source]" if possible in the variant
@@ -15,7 +34,7 @@
 - Put as little logic in `tokio::select!` blocks as possible and call functions as needed (the functions themselves can have a lot of logic, but for readability, the select block should be small)
 - Do not re-export items (you can rely on `pub`, `pub(crate)` and private scoping)
 
-## Comments in Code, Scripts, Manifests, Text files, Config files, etc.
+### Comments in Code, Scripts, Manifests, Text files, Config files, etc.
 
 - Do not add comments
 - Do not modify comments
