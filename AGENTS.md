@@ -7,7 +7,7 @@
 - Do not push or fetch commits, branches, tags, etc. unless permitted
 - Default to making all edits in the working copy and do not squash unless permitted
 
-## Issue Trackers (Linear, GitHub, etc.)
+## Interacting with Issue Trackers (e.g. Linear, GitHub)
 
 - Do not create comments
 - Do not edit comments
@@ -27,7 +27,7 @@ The only exceptions are the following, and they must be explicit:
 - You only file issues if explicitly permitted
   - When doing so, you can only say "<AGENT>'s notes:" (e.g. "Claude's notes:" or "Codex's notes") followed by a quote block with your contents.
 
-## Code Review
+## Interacting with Code Review platforms (e.g. GitHub)
 
 - Do not create comments
 - Do not edit comments
