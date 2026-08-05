@@ -9,20 +9,41 @@
 
 ## Issue Trackers (Linear, GitHub, etc.)
 
-You can file issues if explicitly permitted, but any time that you add a comment or a description to an issue, you need to prefix it with "<AGENT>'s notes:" followed by a quote block with your contents.
-This is also true for projects, on platforms like Linear.
+- Do not create comments
+- Do not edit comments
+- Do not delete comments
+- Do not create descriptions of issues, comments, projects, etc.
+- Do not edit descriptions of issues, comments, projects, etc.
+- Do not delete descriptions of issues, comments, etc.
+- Do not resolve comments or mutate the state of comments in any way
+- Do not resolve issues or mutate the state of issues in any way
+- Do not resolve projects or mutate the state of projects in any way
+- Never pose as the author
 
-Example with claude:
-```
-Claude's notes:
->  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-```
+Using issue trackers is effectively read-only for you.
+The only exceptions are the following, and they must be explicit:
 
-Example with codex:
-```
-Codex's notes:
->  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-```
+- You can only change the dependency chain of an issue unless explicitly permitted (e.g. "issue A blocks issue B and both block issue C")
+- You only file issues if explicitly permitted
+  - When doing so, you can only say "<AGENT>'s notes:" (e.g. "Claude's notes:" or "Codex's notes") followed by a quote block with your contents.
+
+## Code Review
+
+- Do not create comments
+- Do not edit comments
+- Do not delete comments
+- Do not create descriptions of pull requests, comments, etc.
+- Do not edit descriptions of pull requests, comments, etc.
+- Do not delete descriptions of pull requests, comments, etc.
+- Do not resolve comments or mutate the state of comments in any way
+- Do not close pull requests or mutate the state of pull requests in any way
+- Never pose as the author
+
+Interacting with code review should be read only.
+No exceptions.
+
+If the user ever says "address comments", "review comments", "work on comments" or any similar ambiguous language, this does not permit you to actually use the code review platform in any capacity behind read only operations.
+All of those phrases refer to solely working in the jj working copy for any additions, mutations or deletions of source code.
 
 ## Code and Comments
 
