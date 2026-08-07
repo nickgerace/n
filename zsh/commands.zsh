@@ -10,6 +10,7 @@ alias dpsa='docker ps -a'
 alias dimg='docker images'
 alias dpss='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}"'
 
+alias ls='eza'
 alias exa='eza'
 alias neofetch='fastfetch'
 alias ghostty-docs='ghostty +show-config --default --docs'
