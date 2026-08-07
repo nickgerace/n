@@ -1,4 +1,4 @@
-## Interacting with Issue Trackers (e.g. Linear, GitHub)
+# Interacting with Issue Trackers (e.g. Linear, GitHub)
 
 - Do not create comments
 - Do not edit comments

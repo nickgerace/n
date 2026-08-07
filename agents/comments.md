@@ -1,4 +1,4 @@
-## Comments in Code, Scripts, Manifests, Text files, Config files, etc.
+# Comments in Code, Scripts, Manifests, Text files, Config files, etc.
 
 - Do not add comments
 - Do not modify comments

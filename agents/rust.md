@@ -1,4 +1,4 @@
-## Rust
+# Rust
 
 - Prefer functions and functional approaches over object-oriented ones
 - If the crate uses "thiserror" for error enums and you need to create an error, use it and use "#[source]" if possible in the variant

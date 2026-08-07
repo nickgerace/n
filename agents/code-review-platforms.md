@@ -1,4 +1,4 @@
-## Interacting with Code Review platforms (e.g. GitHub)
+# Interacting with Code Review platforms (e.g. GitHub)
 
 - Do not create comments
 - Do not edit comments
