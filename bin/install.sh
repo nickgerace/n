@@ -138,11 +138,4 @@ elif [ "$OS" = "Linux" ]; then
   link "$REPO/experiments/framework/config.ghostty" "$HOME/.config/ghostty/config.ghostty"
 fi
 
-log "Checking if mise is installed..."
-if command -v mise; then
-  log "Trusting config file for mise and then linking..."
-  mise trust "$REPO/mise/config.toml"
-  link "$REPO/mise/config.toml" "$HOME/.config/mise/config.toml"
-fi
-
 log-success "Success!"

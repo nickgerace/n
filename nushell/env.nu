@@ -22,11 +22,6 @@ $env.LS_COLORS = (vivid generate rose-pine-dawn)
 let generated_dir = ($nu.home-dir | path join .config nushell)
 mkdir $generated_dir
 
-if (which mise | is-not-empty) {
-  let mise_nu = ($generated_dir | path join mise.nu)
-  mise activate nu | save $mise_nu --force
-}
-
 if (which just | is-not-empty) {
   let just_nu = ($generated_dir | path join just.nu)
   just --completions nushell | save $just_nu --force

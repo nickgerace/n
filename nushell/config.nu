@@ -1,7 +1,5 @@
 # The "use" files created from "env.nu" (must come before the first source call)
 const generated_dir = ($nu.home-dir | path join .config nushell)
-const mise_nu = if (($generated_dir | path join mise.nu) | path exists) { $generated_dir | path join mise.nu } else { null }
-use $mise_nu
 
 # The "source" files created from "env.nu"
 const jj_nu = if (($generated_dir | path join jj.nu) | path exists) { $generated_dir | path join jj.nu } else { null }
