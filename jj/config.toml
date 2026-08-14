@@ -7,7 +7,7 @@ editor = "hx"
 diff-formatter = "difft"
 
 [merge-tools.difft]
-diff-args = ["--color=always", "--display=side-by-side", "--width=$width", "$left", "$right"]
+diff-args = ["--color=always", "--display=side-by-side", "--width=$width", "--sort-paths", "$left", "$right"]
 
 [aliases]
 stack = ["log", "-r", "@ | trunk()..@ | trunk()"]
@@ -16,12 +16,6 @@ stack = ["log", "-r", "@ | trunk()..@ | trunk()"]
 git_push_bookmark = '''
 "nickgerace/"
 ++ word(change_id.short().substr(0, 1))
-++ "-"
-++ word(change_id.short().substr(1, 2))
-++ "-"
-++ word(change_id.short().substr(2, 3))
-++ "-"
-++ word(change_id.short().substr(3, 4))
 '''
 
 [template-aliases]
