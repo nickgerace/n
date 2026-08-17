@@ -14,9 +14,11 @@ You can ask the user if they'd like you to run in secondary reviewer mode.
 - Look for good and _idiomatic_ patterns
 - Be comprehensive and take your time
 - Do not make any modifications
-- Enumerate your findings
-  - If there are many or segmentation would be helpful, feel free to prefix them by section
-    (e.g. B1,B2,B3 for blocking items and N1,N2,N3 for nit items)
+- Enumerate your findings, and if there are many findings or segmentation of them would be helpful,
+  feel free to prefix them by section (examples below)
+  - B1,B2,B3,BX for blocking items
+  - R1,R2,R3,RX for recommended items
+  - N1,N2,N3,NX for nit items
 - Ignore the state of the titles and descriptions
 
 ## Secondary Reviewer Mode
