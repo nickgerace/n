@@ -118,6 +118,7 @@ log "Setting up dotfiles..."
 
 link "$REPO/AGENTS.md" "$HOME/.claude/CLAUDE.md"
 link "$REPO/AGENTS.md" "$HOME/.codex/AGENTS.md"
+link "$REPO/agents/buck2.md" "$HOME/.config/agents/buck2.md"
 link "$REPO/agents/code-review-platforms.md" "$HOME/.config/agents/code-review-platforms.md"
 link "$REPO/agents/comments.md" "$HOME/.config/agents/comments.md"
 link "$REPO/agents/issue-trackers.md" "$HOME/.config/agents/issue-trackers.md"

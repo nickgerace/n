@@ -6,6 +6,7 @@ They are not optional background reading.
 Before acting in any area below, read its file first and follow it exactly.
 Do not rely on your memory of these rules and do not act in an area until you have read its file.
 
+- buck2: `~/.config/agents/buck2.md`
 - Comments in Code, Scripts, Manifests, Text files, Config files, etc.: `~/.config/agents/comments.md`
 - Interacting with Code Review platforms (e.g. GitHub): `~/.config/agents/code-review-platforms.md`
 - Interacting with Issue Trackers (e.g. Linear, GitHub): `~/.config/agents/issue-trackers.md`
