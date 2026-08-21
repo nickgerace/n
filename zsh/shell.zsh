@@ -14,9 +14,6 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt share_history
 
-PROMPT='%F{4}%~%f
-%F{5}❯%f '
-
 alias sz='source "$HOME/.zshrc"'
 
 alias ..="cd .."
