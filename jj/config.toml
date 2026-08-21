@@ -16,6 +16,8 @@ stack = ["log", "-r", "@ | trunk()..@ | trunk()"]
 git_push_bookmark = '''
 "nickgerace/"
 ++ word(change_id.short().substr(0, 1))
+++ "-"
+++ word(change_id.short().substr(1, 2))
 '''
 
 [template-aliases]
