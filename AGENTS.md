@@ -8,8 +8,10 @@ Do not rely on your memory of these rules and do not act in an area until you ha
 
 - buck2: `~/.config/agents/buck2.md`
 - Comments in Code, Scripts, Manifests, Text files, Config files, etc.: `~/.config/agents/comments.md`
-- Interacting with Code Review platforms (e.g. GitHub): `~/.config/agents/code-review-platforms.md`
-- Interacting with Issue Trackers (e.g. Linear, GitHub): `~/.config/agents/issue-trackers.md`
+- Interacting with Code Review platforms (e.g. GitHub, gh CLI): `~/.config/agents/code-review-platforms.md`
+- Interacting with Issue Trackers (e.g. Linear, GitHub, gh CLI): `~/.config/agents/issue-trackers.md`
+- Manifests (e.g. tofu and terraform files, k8s and kustomize yaml): `~/.config/agents/manifests.md`
+- Markdown files: `~/.config/agents/markdown-files.md`
 - Reviewing Changes: `~/.config/agents/reviewing-changes.md`
 - Rust: `~/.config/agents/rust.md`
-- Source Control, Version Control, VCS, etc.: `~/.config/agents/version-control.md`
+- Source control, version Control, vcs, jj, git, etc.: `~/.config/agents/version-control.md`
