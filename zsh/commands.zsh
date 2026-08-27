@@ -210,10 +210,11 @@ function kgpa {
     print -u2 'usage: kgpa [true|false]'
     return 2
   fi
+  # TODO(nick): fix this to make it actually usable.
   if [[ "${1:-false}" == true ]]; then
-    watch 'kubectl get pods -A'
+    kubectl get pods -A --field-selector=metadata.namespace!=kube-system,metadata.namespace!=gmp-system,metadata.namespace!=gke-managed-cim $2
   else
-    kubectl get pods -A
+    kubectl get pods -A $1
   fi
 }
 

@@ -11,3 +11,7 @@
 
 Only when you are explicitly told to solve conflicts can you squash.
 You can only squash changes that are solely to solve conflicts, and again, you can only do that if you were explicitly told to solve conflicts.
+
+## Splitting Changes
+
+- When splitting a change, each change needs to be individually landable/mergeable, but they can be dependent on their descendants in a stack
