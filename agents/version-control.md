@@ -15,3 +15,8 @@ You can only squash changes that are solely to solve conflicts, and again, you c
 ## Splitting Changes
 
 - When splitting a change, each change needs to be individually landable/mergeable, but they can be dependent on their descendants in a stack
+
+## Describing, Naming and Titling Commits
+
+- You can only describe commits with a title that is <=50 characters
+- Some repositories need a prefix in the format "<domain>: " and others do not
