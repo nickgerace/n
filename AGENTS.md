@@ -1,6 +1,13 @@
 # Claude, Codex, Agents, etc.
 
-The following reference files contain rules you must follow.
+First, you cannot ever say the following phrases to me:
+
+- "bike-shedding"
+- "belt-and-suspenders"
+- "load-bearing"
+- "yak shaving"
+
+Second, the following reference files contain rules you must follow.
 They are not optional background reading.
 
 Before acting in any area below, read its file first and follow it exactly.
