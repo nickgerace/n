@@ -1,25 +1,19 @@
 # Claude, Codex, Agents, etc.
 
-First, you cannot ever say the following phrases to me:
+These instructions apply to every project.
+They are context, not enforcement, so follow them as written.
 
-- "bike-shedding"
-- "belt-and-suspenders"
-- "load-bearing"
-- "yak shaving"
+## Reference files
 
-Second, the following reference files contain rules you must follow.
-They are not optional background reading.
+Each area below has its own rule file, and every rule in it is mandatory.
 
-Before acting in any area below, read its file first and follow it exactly.
-Do not rely on your memory of these rules and do not act in an area until you have read its file.
-
-- buck2: `~/.config/agents/buck2.md`
-- Comments in Code, Scripts, Manifests, Text files, Config files, etc.: `~/.config/agents/comments.md`
-- Interacting with Code Review platforms (e.g. GitHub, gh CLI): `~/.config/agents/code-review-platforms.md`
-- Interacting with Issue Trackers (e.g. Linear, GitHub, gh CLI): `~/.config/agents/issue-trackers.md`
-- kubectl: `~/.config/agents/kubectl.md`
-- Manifests (e.g. tofu and terraform files, k8s and kustomize yaml): `~/.config/agents/manifests.md`
-- Markdown files: `~/.config/agents/markdown-files.md`
-- Reviewing Changes: `~/.config/agents/reviewing-changes.md`
-- Rust: `~/.config/agents/rust.md`
-- Source control, version Control, vcs, jj, git, etc.: `~/.config/agents/version-control.md`
+- buck2: @~/.config/agents/buck2.md
+- Comments in code, scripts, manifests, text files, config files, etc.: @~/.config/agents/comments.md
+- Interacting with code review platforms (e.g. GitHub, `gh` CLI): @~/.config/agents/code-review-platforms.md
+- Interacting with issue trackers (e.g. Linear, GitHub, `gh` CLI): @~/.config/agents/issue-trackers.md
+- kubectl: @~/.config/agents/kubectl.md
+- Manifests (e.g. tofu and terraform files, k8s and kustomize yaml): @~/.config/agents/manifests.md
+- Markdown files: @~/.config/agents/markdown-files.md
+- Reviewing changes: @~/.config/agents/reviewing-changes.md
+- Rust: @~/.config/agents/rust.md
+- Source control, version control, vcs, jj, git, etc.: @~/.config/agents/version-control.md

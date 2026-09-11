@@ -19,6 +19,7 @@ You can ask the user if they'd like you to run in secondary reviewer mode.
   - B1,B2,B3,BX for blocking items
   - R1,R2,R3,RX for recommended items
   - N1,N2,N3,NX for nit items
+- Reference each finding by file path and line number so it can be located quickly
 - Ignore the state of the titles and descriptions
 
 ## Secondary Reviewer Mode
