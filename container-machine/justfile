@@ -1,0 +1,15 @@
+set positional-arguments
+
+image := env_var_or_default("CONTAINER_MACHINE_IMAGE", "local/ubuntu-machine:latest")
+machine := env_var_or_default("CONTAINER_MACHINE_NAME", "ubuntu")
+
+build:
+    container build -t "{{ image }}" "{{ justfile_directory() }}"
+
+run *args:
+    if ! container image inspect "{{ image }}" >/dev/null 2>&1; then echo "error: image {{ image }} is not built; run 'just build' first" >&2; exit 1; fi
+    if ! container machine inspect "{{ machine }}" >/dev/null 2>&1; then container machine create "{{ image }}" --name "{{ machine }}" --no-boot; fi
+    container machine run -n "{{ machine }}" -- "$@"
+
+init:
+    container system start
