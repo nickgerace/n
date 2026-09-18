@@ -1,0 +1,11 @@
+default:
+    @just --list
+
+run:
+    @./scripts/run.sh
+
+shell:
+    @./scripts/shell.sh
+
+stop:
+    @./scripts/stop.sh
