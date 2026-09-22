@@ -7,8 +7,7 @@ for directory in \
   /opt/homebrew/opt/gnu-sed/libexec/gnubin \
   /opt/homebrew/opt/make/libexec/gnubin \
   /usr/local/bin \
-  "$HOME/.local/bin" \
-  "$HOME/.npm-global/bin"; do
+  "$HOME/.local/bin"; do
   if [[ -d "$directory" ]]; then
     path=("$directory" $path)
   fi

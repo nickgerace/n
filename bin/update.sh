@@ -4,8 +4,6 @@ set -eu
 # Make sure that we aren't relying on a specific environment based on our current working directory
 pushd "$(mktemp -d)"
 
-UPDATE_REPO="$HOME/src/n"
-
 LOG_FORMAT_BOLD=$(tput bold)
 LOG_FORMAT_GREEN=$(tput setaf 2)
 LOG_FORMAT_RED=$(tput setaf 1)
@@ -63,19 +61,6 @@ fi
 if command -v rustup; then
   log "Running rustup update..."
   rustup update
-fi
-
-if command -v fnm; then
-  log "Updating node installed via fnm..."
-  fnm install --lts
-fi
-
-if command -v npm && [ -d "$HOME/.npm-global" ]; then
-  log "Updating npm packages..."
-  pushd "$UPDATE_REPO"
-  npm set prefix ~/.npm-global
-  npm up -g
-  popd
 fi
 
 if command -v claude && [ -f "$HOME/.local/bin/claude" ]; then

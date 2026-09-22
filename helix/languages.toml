@@ -27,36 +27,3 @@ allFeatures = true
 
 [language-server.rust-analyzer.config.check]
 command = "check" # clippy works too
-
-# ==========================================================================================
-# NOTE(nick): everything below this comment is absolute crazy town. Use at your own will.
-# Source: https://github.com/helix-editor/helix/discussions/10691#discussioncomment-10688441
-# ==========================================================================================
-
-[[language]]
-name = "vue"
-auto-format = true
-language-servers = ["vuels", "typescript-language-server"]
-formatter = { command = 'prettier', args = ["--parser", "vue"] }
-
-[language-server.vuels]
-command = "vue-language-server"
-args = ["--stdio"]
-
-[language-server.typescript-language-server]
-filetypes = ["javascript", "typescript"]
-command = "typescript-language-server"
-args = ["--stdio"]
-
-[language-server.typescript-language-server.config]
-plugins = [{  name = "@vue/typescript-plugin", location = "../../.npm-global/lib/node_modules/@vue/language-server", languages = ["vue"] }]
-tsserver = { path = "../../.npm-global/lib/node_modules/typescript/lib" }
-
-[language-server.typescript-language-server.config.vue.inlayHints]
-includeInlayEnumMemberValueHints = true
-includeInlayFunctionLikeReturnTypeHints = true
-includeInlayFunctionParameterTypeHints = true
-includeInlayParameterNameHints = "all"
-includeInlayParameterNameHintsWhenArgumentMatchesName = true
-includeInlayPropertyDeclarationTypeHints = true
-includeInlayVariableTypeHints = true

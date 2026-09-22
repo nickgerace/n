@@ -9,11 +9,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    # TODO(nick): use these instead of npm packages for helix
-    # typescript
-    # typescript-language-server
-    # vue-language-server
-    # nodePackages.prettier
     alejandra
     aspell
     bash
@@ -40,7 +35,6 @@
     just
     lolcat
     mold
-    nodejs
     ripgrep
     shellcheck
     speedtest-cli
@@ -51,7 +45,6 @@
     zoxide
     zsh
 
-    bash-language-server
     helix
     vscode-extensions.vadimcn.vscode-lldb
 

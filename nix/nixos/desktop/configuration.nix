@@ -8,15 +8,9 @@
   imports = [./hardware-configuration.nix];
 
   environment.systemPackages = with pkgs-unstable; [
-    # TODO(nick): use these instead of npm packages for helix
-    # typescript
-    # typescript-language-server
-    # vue-language-server
-    # nodePackages.prettier
     alejandra
     aspell
     bash
-    bash-language-server
     bat
     cowsay
     curl
@@ -38,7 +32,6 @@
     jq
     lolcat
     mold
-    nodejs
     nvtopPackages.full
     ripgrep
     shellcheck

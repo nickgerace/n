@@ -25,7 +25,6 @@ const fastfetch_nu = path self fastfetch.nu
 const ghostty_nu = path self ghostty.nu
 const repo_jj_nu = path self jj.nu
 const kubernetes_nu = path self kubernetes.nu
-const npm_nu = path self npm.nu
 const ps_nu = path self ps.nu
 const rust_nu = path self rust.nu
 const shfmt_nu = path self shfmt.nu
@@ -42,7 +41,6 @@ source $fastfetch_nu
 source $ghostty_nu
 source $repo_jj_nu
 source $kubernetes_nu
-source $npm_nu
 source $rust_nu
 source $shfmt_nu
 source $theme_nu
@@ -51,5 +49,4 @@ source $zoxide_repo_nu
 
 # Unsupported integrations that were supported in zsh:
 # - brew
-# - fnm
 # - fzf

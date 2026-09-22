@@ -13,7 +13,6 @@
 !.gitignore
 !.helix
 !.mcp.json
-!.npmrc
 !.prettierignore
 !.prettierrc
 !.rgignore

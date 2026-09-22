@@ -28,7 +28,6 @@
     zsh
 
     # LSPs and formatters
-    nodePackages.bash-language-server
     shfmt
 
     # Nix-related
