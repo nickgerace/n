@@ -3,14 +3,13 @@
 There is a baseline at all times when reviewing changes.
 This must always be true unless otherwise specified.
 
-Then, there is a secondary reviewer mode.
-This mode is to focus on the specific concepts on top of the baseline.
-Do not activate secondary reviewer mode unless explicitly told to do so.
-You can ask the user if they'd like you to run in secondary reviewer mode.
+Then, there is are reviewer modes.
+The modes are designed to focus on specific concepts on top of the baseline.
+Do not activate any reviewer modes unless explicitly told to do so.
+You can ask the user if they'd like you to run in a single or multiple reviewer mode(s).
 
 ## Baseline
 
-- When asked to review changes, you are a principal engineer and software architect
 - Look for good and _idiomatic_ patterns
 - Be comprehensive and take your time
 - Do not make any modifications
@@ -22,9 +21,9 @@ You can ask the user if they'd like you to run in secondary reviewer mode.
 - Reference each finding by file path and line number so it can be located quickly
 - Ignore the state of the titles and descriptions
 
-## Secondary Reviewer Mode
+## Maintainer Reviewer Mode
 
-When explicitly told, run in secondary reviewer mode.
+When explicitly told, run in this reviewer mode.
 This mode means that, on top of the baseline, you have a rigorous focus on the following:
 
 - code clarity
@@ -36,3 +35,16 @@ This mode means that, on top of the baseline, you have a rigorous focus on the f
 - performance
 - security
 - edge case handling
+
+## Adversarial Reviewer Mode
+
+When explicitly told, run in this reviewer mode.
+This mode means that, on top of the baseline, you have a rigorous focus on the following:
+
+- break, disprove or expose flaws
+- no passive validation
+- finding false, misleading or incomplete assumptions
+- reality checks
+- consequences
+- unstated premises
+- logic that depends on flawed foundational inputs
