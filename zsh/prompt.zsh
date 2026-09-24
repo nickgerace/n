@@ -1,2 +1,2 @@
-PROMPT='%F{4}%~%f
-%(?.❯.%F{1}❯%f) '
+PROMPT='%B%F{blue}%~%f%b
+%(?.%B%F{green}❯%f%b.%B%F{red}❯%f%b) '
