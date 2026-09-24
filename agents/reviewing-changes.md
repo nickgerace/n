@@ -16,6 +16,8 @@ Interactive, checkbox-style multiple choice is best for that.
   - B1,B2,B3,BX for blocking items
   - R1,R2,R3,RX for recommended items
   - N1,N2,N3,NX for nit items
+- For each enumerated finding, give a confidence level with the following choices: very high, high,
+  medium, low, very low
 - Reference each finding by file path and line number so it can be located quickly
 - Ignore the state of the titles and descriptions
 
