@@ -1,7 +1,275 @@
-prefix_rule(pattern=["gh", "api"], decision="prompt")
-prefix_rule(pattern=["gh", "issue", "create"], decision="prompt")
-prefix_rule(pattern=["gh", "issue", ["edit", "close", "comment", "reopen", "delete", "transfer", "lock", "unlock", "pin", "unpin", "develop"]], decision="forbidden")
-prefix_rule(pattern=["gh", "pr", ["create", "edit", "merge", "close", "reopen", "comment", "review", "ready", "lock", "unlock", "update-branch", "revert"]], decision="forbidden")
-prefix_rule(pattern=["git"], decision="forbidden")
-prefix_rule(pattern=["jj", "git", ["push", "fetch"]], decision="forbidden")
-prefix_rule(pattern=["jj", "squash"], decision="prompt")
+prefix_rule(
+    pattern=[
+        "gh",
+        "api",
+    ],
+    decision="prompt",
+)
+
+prefix_rule(
+    pattern=[
+        "gh",
+        "issue",
+        [
+            "close",
+            "comment",
+            "delete",
+            "develop",
+            "edit",
+            "lock",
+            "pin",
+            "reopen",
+            "transfer",
+            "unlock",
+            "unpin",
+        ],
+    ],
+    decision="forbidden",
+)
+
+prefix_rule(
+    pattern=[
+        "gh",
+        "issue",
+        "create",
+    ],
+    decision="prompt",
+)
+
+prefix_rule(
+    pattern=[
+        "gh",
+        "pr",
+        [
+            "close",
+            "comment",
+            "create",
+            "edit",
+            "lock",
+            "merge",
+            "ready",
+            "reopen",
+            "revert",
+            "review",
+            "unlock",
+            "update-branch",
+        ],
+    ],
+    decision="forbidden",
+)
+
+prefix_rule(
+    pattern=[
+        "git",
+    ],
+    decision="forbidden",
+)
+
+prefix_rule(
+    pattern=[
+        "jj",
+        "git",
+        [
+            "fetch",
+            "push",
+        ],
+    ],
+    decision="forbidden",
+)
+
+prefix_rule(
+    pattern=[
+        "jj",
+        "squash",
+    ],
+    decision="prompt",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        [
+            "annotate",
+            "apply",
+            "attach",
+            "autoscale",
+            "cordon",
+            "cp",
+            "create",
+            "debug",
+            "delete",
+            "drain",
+            "edit",
+            "exec",
+            "expose",
+            "label",
+            "patch",
+            "port-forward",
+            "proxy",
+            "replace",
+            "run",
+            "scale",
+            "set",
+            "taint",
+            "uncordon",
+        ],
+    ],
+    decision="prompt",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        [
+            "api-resources",
+            "api-versions",
+            "cluster-info",
+            "completion",
+            "describe",
+            "diff",
+            "events",
+            "explain",
+            "get",
+            "help",
+            "kustomize",
+            "logs",
+            "options",
+            "top",
+            "version",
+            "wait",
+        ],
+    ],
+    decision="allow",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "auth",
+        [
+            "can-i",
+            "whoami",
+        ],
+    ],
+    decision="allow",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "auth",
+        "reconcile",
+    ],
+    decision="prompt",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "certificate",
+        [
+            "approve",
+            "deny",
+        ],
+    ],
+    decision="prompt",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "config",
+        [
+            "current-context",
+            "get-clusters",
+            "get-contexts",
+            "get-users",
+            "view",
+        ],
+    ],
+    decision="allow",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "config",
+        [
+            "delete-cluster",
+            "delete-context",
+            "delete-user",
+            "rename-context",
+            "set",
+            "set-cluster",
+            "set-context",
+            "set-credentials",
+            "unset",
+            "use-context",
+        ],
+    ],
+    decision="prompt",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        [
+            "ctx",
+            "ns",
+        ],
+    ],
+    decision="prompt",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "kuberc",
+        "set",
+    ],
+    decision="prompt",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "kuberc",
+        "view",
+    ],
+    decision="allow",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "plugin",
+        "list",
+    ],
+    decision="allow",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "rollout",
+        [
+            "history",
+            "status",
+        ],
+    ],
+    decision="allow",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "rollout",
+        [
+            "pause",
+            "restart",
+            "resume",
+            "undo",
+        ],
+    ],
+    decision="prompt",
+)
