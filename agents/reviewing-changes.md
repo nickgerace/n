@@ -2,7 +2,9 @@
 
 The baseline below applies to every review unless the user says otherwise.
 Reviewer modes add a focus on top of the baseline.
+
 Activate a mode only when explicitly told to; you may ask the user whether to run one or more modes.
+Interactive, checkbox-style multiple choice is best for that.
 
 ## Baseline
 
@@ -44,3 +46,17 @@ This mode means that, on top of the baseline, you have a rigorous focus on the f
 - consequences
 - unstated premises
 - logic that depends on flawed foundational inputs
+
+## Prose Reviewer Mode
+
+When explicitly told, run in this reviewer mode.
+
+Unlike other reviewer modes, you are explicitly allowed to make changes, but do so in the working copy.
+If the working copy is unclean, ask to create another working copy.
+
+- Review only comments and prose affected by the change.
+- Do not use commit titles or descriptions to interpret the change.
+- Recommend deleting comments and prose that are "slop", redundant, vague, misleading, inaccurate or unsupported
+- Default to deletion when the value or accuracy of a passage is uncertain
+- Modify only when you are highly confident it will be accurate, concise, and human readable
+- Prune slop and default to deletion
