@@ -94,14 +94,14 @@ function merge-json {
     exit 1
   fi
 
+  if [ ! -f "$2" ]; then
+    log "Skipping: $1 --> $2 (destination does not exist)"
+    return
+  fi
+
   if ! command -v jq >/dev/null; then
     log-error "jq is required to merge: $1"
     exit 1
-  fi
-
-  mkdir -p "$(dirname "$2")"
-  if [ ! -f "$2" ]; then
-    echo '{}' >"$2"
   fi
 
   local TMP
@@ -164,7 +164,7 @@ log "Setting up primary agent files..."
 link "$REPO/AGENTS.md" "$HOME/.claude/CLAUDE.md"
 link "$REPO/AGENTS.md" "$HOME/.codex/AGENTS.md"
 link "$REPO/codex/rules/agents.rules" "$HOME/.codex/rules/agents.rules"
-merge-json "$REPO/claude/settings.json" "$HOME/.claude/settings.json"
+merge-json "$REPO/claude/rules.json" "$HOME/.claude/settings.json"
 
 log "Setting up agent reference files..."
 link "$REPO/agents/buck2.md" "$HOME/.config/agents/buck2.md"
