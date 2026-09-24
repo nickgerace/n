@@ -24,7 +24,7 @@ if ! command -v brew; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   if ! command -v brew; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.^Cshrc
+    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> "$HOME/.zshrc"
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   fi
 fi
@@ -52,7 +52,7 @@ if ! command -v docker; then
   if ! getent group docker; then
     sudo groupadd docker
   fi
-  sudo usermod -aG docker $USER
+  sudo usermod -aG docker "$USER"
 fi
 
 

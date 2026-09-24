@@ -9,7 +9,7 @@ sudo -v
 function scan-directory {
   echo "---"
   echo "$1"
-  sudo ls $1 | rg -v "com\.apple"
+  sudo ls "$1" | rg -v "com\.apple"
 }
 
 scan-directory ~/Library/LaunchAgents        # per-user agents <-- user

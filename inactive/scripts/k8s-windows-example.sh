@@ -2,12 +2,12 @@
 set -e
 
 # Source: https://kubernetes.io/docs/setup/production-environment/windows/user-guide-windows-containers/#getting-started-deploying-a-windows-container
-if [ ! $1 ]; then
+if [ -z "${1:-}" ]; then
   echo "required argument: <create>/<delete>"
   exit 1
 fi
 
-cat <<EOF | kubectl $1 -f -
+cat <<EOF | kubectl "$1" -f -
 apiVersion: v1
 kind: Namespace
 metadata:
