@@ -1,17 +1,13 @@
 # Reviewing Changes
 
-There is a baseline at all times when reviewing changes.
-This must always be true unless otherwise specified.
-
-Then, there is are reviewer modes.
-The modes are designed to focus on specific concepts on top of the baseline.
-Do not activate any reviewer modes unless explicitly told to do so.
-You can ask the user if they'd like you to run in a single or multiple reviewer mode(s).
+The baseline below applies to every review unless the user says otherwise.
+Reviewer modes add a focus on top of the baseline.
+Activate a mode only when explicitly told to; you may ask the user whether to run one or more modes.
 
 ## Baseline
 
 - Look for good and _idiomatic_ patterns
-- Be comprehensive and take your time
+- Review the entire change, not a sample of it
 - Do not make any modifications
 - Enumerate your findings, and if there are many findings or segmentation of them would be helpful,
   feel free to prefix them by section (examples below)

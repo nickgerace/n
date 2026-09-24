@@ -88,6 +88,43 @@ function link {
   ln -s "$1" "$2"
 }
 
+function merge-json {
+  if [ ! -f "$1" ]; then
+    log-error "file does not exist: $1"
+    exit 1
+  fi
+
+  if ! command -v jq >/dev/null; then
+    log-error "jq is required to merge: $1"
+    exit 1
+  fi
+
+  mkdir -p "$(dirname "$2")"
+  if [ ! -f "$2" ]; then
+    echo '{}' >"$2"
+  fi
+
+  local TMP
+  TMP=$(mktemp "$2.XXXXXX")
+
+  log "Merging: $1 --> $2"
+  if ! jq -s '
+    def merge($a; $b):
+      if ($a | type) == "object" and ($b | type) == "object" then
+        reduce ($b | keys_unsorted[]) as $k ($a; .[$k] = merge($a[$k]; $b[$k]))
+      elif ($a | type) == "array" and ($b | type) == "array" then
+        $a + ($b - $a)
+      elif $b == null then $a
+      else $b end;
+    merge(.[0]; .[1])
+  ' "$2" "$1" >"$TMP"; then
+    rm "$TMP"
+    log-error "could not merge: $1 --> $2"
+    exit 1
+  fi
+  mv "$TMP" "$2"
+}
+
 if [ "$BOOTSTRAP_PLATFORM" = "true" ]; then
   log "Checking if cargo is installed via rustup..."
   if ! command -v cargo; then
@@ -114,9 +151,22 @@ if [ "$BOOTSTRAP_PLATFORM" = "true" ]; then
   xargs brew install <"$REPO/pkgs/brew-base.lst"
 fi
 
-log "Setting up dotfiles..."
+log "Setting up core dotfiles..."
+link "$REPO/fastfetch/config.jsonc" "$HOME/.config/fastfetch/config.jsonc"
+link "$REPO/gfold/config.toml" "$HOME/.config/gfold.toml"
+link "$REPO/helix/config.toml" "$HOME/.config/helix/config.toml"
+link "$REPO/helix/ignore" "$HOME/.config/helix/ignore"
+link "$REPO/helix/languages.toml" "$HOME/.config/helix/languages.toml"
+link "$REPO/jj/config.toml" "$HOME/.config/jj/config.toml"
+link "$REPO/zshrc" "$HOME/.zshrc"
 
+log "Setting up primary agent files..."
+link "$REPO/AGENTS.md" "$HOME/.claude/CLAUDE.md"
 link "$REPO/AGENTS.md" "$HOME/.codex/AGENTS.md"
+link "$REPO/codex/rules/agents.rules" "$HOME/.codex/rules/agents.rules"
+merge-json "$REPO/claude/settings.json" "$HOME/.claude/settings.json"
+
+log "Setting up agent reference files..."
 link "$REPO/agents/buck2.md" "$HOME/.config/agents/buck2.md"
 link "$REPO/agents/code-review-platforms.md" "$HOME/.config/agents/code-review-platforms.md"
 link "$REPO/agents/comments.md" "$HOME/.config/agents/comments.md"
@@ -127,13 +177,6 @@ link "$REPO/agents/markdown-files.md" "$HOME/.config/agents/markdown-files.md"
 link "$REPO/agents/reviewing-changes.md" "$HOME/.config/agents/reviewing-changes.md"
 link "$REPO/agents/rust.md" "$HOME/.config/agents/rust.md"
 link "$REPO/agents/version-control.md" "$HOME/.config/agents/version-control.md"
-link "$REPO/fastfetch/config.jsonc" "$HOME/.config/fastfetch/config.jsonc"
-link "$REPO/gfold/config.toml" "$HOME/.config/gfold.toml"
-link "$REPO/helix/config.toml" "$HOME/.config/helix/config.toml"
-link "$REPO/helix/ignore" "$HOME/.config/helix/ignore"
-link "$REPO/helix/languages.toml" "$HOME/.config/helix/languages.toml"
-link "$REPO/jj/config.toml" "$HOME/.config/jj/config.toml"
-link "$REPO/.zshrc" "$HOME/.zshrc"
 
 if [ "$OS" = "Darwin" ]; then
   link "$REPO/ghostty/config.ghostty" "$HOME/.config/ghostty/config.ghostty"

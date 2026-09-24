@@ -1,6 +1,6 @@
 alias n='cd "$NICK_DOTFILES"'
 alias cdn='cd "$NICK_DOTFILES"'
-alias hxn='hx "$NICK_DOTFILES/.zshrc"'
+alias hxn='hx "$NICK_DOTFILES/zshrc"'
 alias hxd='hx "$NICK_DOTFILES/"'
 alias update='"$NICK_DOTFILES/bin/update.sh"'
 

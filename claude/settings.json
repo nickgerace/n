@@ -1,0 +1,47 @@
+{
+  "permissions": {
+    "defaultMode": "auto",
+    "deny": [
+      "Bash(git *)",
+      "Bash(jj git push *)",
+      "Bash(jj git fetch *)",
+      "Bash(gh pr create *)",
+      "Bash(gh pr edit *)",
+      "Bash(gh pr merge *)",
+      "Bash(gh pr close *)",
+      "Bash(gh pr reopen *)",
+      "Bash(gh pr comment *)",
+      "Bash(gh pr review *)",
+      "Bash(gh issue edit *)",
+      "Bash(gh issue close *)",
+      "Bash(gh issue comment *)",
+      "Bash(gh issue reopen *)",
+      "Bash(gh issue delete *)",
+      "Bash(gh issue transfer *)",
+      "Bash(gh issue lock *)",
+      "Bash(gh issue unlock *)",
+      "Bash(gh issue pin *)",
+      "Bash(gh issue unpin *)",
+      "Bash(gh issue develop *)",
+      "Bash(gh pr ready *)",
+      "Bash(gh pr lock *)",
+      "Bash(gh pr unlock *)",
+      "Bash(gh pr update-branch *)",
+      "Bash(gh pr revert *)",
+    ],
+    "ask": [
+      "Bash(jj squash *)",
+      "Bash(gh api *)",
+      "Bash(gh issue create *)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledPlugins": {
+    "rust-analyzer-lsp@claude-plugins-official": true
+  },
+  "autoMemoryEnabled": false,
+  "skipDangerousModePermissionPrompt": true,
+  "skipWorkflowUsageWarning": true,
+  "theme": "light",
+  "skipAutoPermissionPrompt": true
+}
