@@ -10,12 +10,11 @@
 
 ## Solving Conflicts
 
-Only when you are explicitly told to solve conflicts can you squash.
-You can only squash changes that are solely to solve conflicts, and again, you can only do that if you were explicitly told to solve conflicts.
+Squash only when explicitly told to solve conflicts, and only changes that exist solely to resolve those conflicts.
 
 ## Splitting Changes
 
-- When splitting a change, each change needs to be individually landable/mergeable, but they can be dependent on their descendants in a stack
+- When splitting a change, each change needs to be individually landable/mergeable, but it can depend on its ancestors in the stack
 
 ## Describing, Naming and Titling Commits
 

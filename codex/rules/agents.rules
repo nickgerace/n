@@ -1,0 +1,7 @@
+prefix_rule(pattern=["gh", "api"], decision="prompt")
+prefix_rule(pattern=["gh", "issue", "create"], decision="prompt")
+prefix_rule(pattern=["gh", "issue", ["edit", "close", "comment", "reopen", "delete", "transfer", "lock", "unlock", "pin", "unpin", "develop"]], decision="forbidden")
+prefix_rule(pattern=["gh", "pr", ["create", "edit", "merge", "close", "reopen", "comment", "review", "ready", "lock", "unlock", "update-branch", "revert"]], decision="forbidden")
+prefix_rule(pattern=["git"], decision="forbidden")
+prefix_rule(pattern=["jj", "git", ["push", "fetch"]], decision="forbidden")
+prefix_rule(pattern=["jj", "squash"], decision="prompt")

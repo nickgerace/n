@@ -6,6 +6,7 @@ They are context, not enforcement, so follow them as written.
 ## Reference files
 
 Each area below has its own rule file, and every rule in it is mandatory.
+If a file's contents are not already in your context, read it before acting in that area.
 
 - buck2: @~/.config/agents/buck2.md
 - Comments in code, scripts, manifests, text files, config files, etc.: @~/.config/agents/comments.md
