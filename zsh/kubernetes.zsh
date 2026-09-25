@@ -1,16 +1,4 @@
-function k {
-  if (( $# < 2 )) || [[ -z "$1" || "$1" == -* || -z "$2" || "$2" == -* ]]; then
-    print -u2 'usage: k <context> <kubectl arguments...>'
-    return 2
-  fi
-  local -a args=("${@:2}")
-  local separator=${args[(i)--]}
-  if (( separator <= $#args )); then
-    kubectl "${(@)args[1,separator-1]}" --context "$1" "${(@)args[separator,-1]}"
-  else
-    kubectl "${args[@]}" --context "$1"
-  fi
-}
+alias k="kubectl"
 
 function _k {
   local context="$words[2]"
