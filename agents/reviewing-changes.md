@@ -11,14 +11,9 @@ Interactive, checkbox-style multiple choice is best for that.
 - Look for good and _idiomatic_ patterns
 - Review the entire change, not a sample of it
 - Do not make any modifications
-- Enumerate your findings, and if there are many findings or segmentation of them would be helpful,
-  feel free to prefix them by section (examples below)
-  - B1,B2,B3,BX for blocking items
-  - R1,R2,R3,RX for recommended items
-  - N1,N2,N3,NX for nit items
-- For each enumerated finding, give a confidence level with the following choices: very high, high,
-  medium, low, very low
-- Reference each finding by file path and line number so it can be located quickly
+- Report actionable findings. Explain the consequence and suggest a fix when it is clear. Multiple options are welcome, especially idiomatic ones.
+- Keep findings concise. Group related issues and skip minor style preferences that do not improve the change.
+- State uncertainty when it matters.
 - Ignore the state of the titles and descriptions
 
 ## Maintainer Reviewer Mode
@@ -54,11 +49,11 @@ This mode means that, on top of the baseline, you have a rigorous focus on the f
 When explicitly told, run in this reviewer mode.
 
 Unlike other reviewer modes, you are explicitly allowed to make changes, but do so in the working copy.
-If the working copy is unclean, ask to create another working copy.
+Keep unrelated working copy changes intact.
 
 - Review only comments and prose affected by the change.
 - Do not use commit titles or descriptions to interpret the change.
-- Recommend deleting comments and prose that are "slop", redundant, vague, misleading, inaccurate or unsupported
-- Default to deletion when the value or accuracy of a passage is uncertain
-- Modify only when you are highly confident it will be accurate, concise, and human readable
-- Prune slop and default to deletion
+- Delete redundant, vague, misleading, inaccurate, unsupported, or "slop" text when it adds no value.
+- Prefer deletion when the value or accuracy of a passage is uncertain.
+- Rewrite useful text when a concise, accurate version would help the reader.
+- Add prose only when the change needs an explanation the existing text does not provide.

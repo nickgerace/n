@@ -1,4 +1,4 @@
-# Source Control, Version Control, VCS, etc.
+# Source control, version control, VCS, etc.
 
 - For VCS, source control, etc. tasks, only use `jj` and do not use `git`
   - This includes read-only commands: use `jj log`, `jj diff` and `jj show` rather than their `git` equivalents
@@ -18,5 +18,5 @@ Squash only when explicitly told to solve conflicts, and only changes that exist
 
 ## Describing, Naming and Titling Commits
 
-- You can only describe commits with a title that is <=50 characters
+- Keep commit titles concise and accurate; aim for 50 characters or fewer when that reads naturally
 - Some repositories need a prefix in the format "<domain>: " and others do not, so check recent titles with `jj log` and match what the repository already does
