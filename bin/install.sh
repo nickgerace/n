@@ -167,16 +167,9 @@ link "$REPO/codex/rules/agents.rules" "$HOME/.codex/rules/agents.rules"
 merge-json "$REPO/claude/rules.json" "$HOME/.claude/settings.json"
 
 log "Setting up agent reference files..."
-link "$REPO/agents/buck2.md" "$HOME/.config/agents/buck2.md"
-link "$REPO/agents/code-review-platforms.md" "$HOME/.config/agents/code-review-platforms.md"
-link "$REPO/agents/comments.md" "$HOME/.config/agents/comments.md"
-link "$REPO/agents/issue-trackers.md" "$HOME/.config/agents/issue-trackers.md"
-link "$REPO/agents/kubectl.md" "$HOME/.config/agents/kubectl.md"
-link "$REPO/agents/manifests.md" "$HOME/.config/agents/manifests.md"
-link "$REPO/agents/markdown-files.md" "$HOME/.config/agents/markdown-files.md"
-link "$REPO/agents/reviewing-changes.md" "$HOME/.config/agents/reviewing-changes.md"
-link "$REPO/agents/rust.md" "$HOME/.config/agents/rust.md"
-link "$REPO/agents/version-control.md" "$HOME/.config/agents/version-control.md"
+for file in "$REPO"/agents/*.md; do
+  link "$file" "$HOME/.config/agents/${file##*/}"
+done
 
 if [ "$OS" = "Darwin" ]; then
   link "$REPO/ghostty/config.ghostty" "$HOME/.config/ghostty/config.ghostty"

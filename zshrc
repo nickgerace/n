@@ -3,9 +3,11 @@ export NICK_DOTFILES="$NICK_SRC/n"
 
 source "$NICK_DOTFILES/zsh/environment.zsh"
 source "$NICK_DOTFILES/zsh/shell.zsh"
-source "$NICK_DOTFILES/zsh/prompt.zsh"
 source "$NICK_DOTFILES/zsh/integrations.zsh"
-source "$NICK_DOTFILES/zsh/commands.zsh"
-source "$NICK_DOTFILES/zsh/docker.zsh"
-source "$NICK_DOTFILES/zsh/jj.zsh"
-source "$NICK_DOTFILES/zsh/kubernetes.zsh"
+
+for file in "$NICK_DOTFILES"/zsh/*.zsh(N); do
+  case "$file:t" in
+    environment.zsh|shell.zsh|integrations.zsh) continue ;;
+  esac
+  source "$file"
+done
