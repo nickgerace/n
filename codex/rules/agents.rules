@@ -1,14 +1,6 @@
 prefix_rule(
     pattern=[
         "gh",
-        "api",
-    ],
-    decision="prompt",
-)
-
-prefix_rule(
-    pattern=[
-        "gh",
         "issue",
         [
             "close",
