@@ -30,7 +30,6 @@
       "Bash(kubectl wait *)"
     ],
     "ask": [
-      "Bash(gh api *)",
       "Bash(gh issue create *)",
       "Bash(jj squash *)",
       "Bash(kubectl annotate *)",
