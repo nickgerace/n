@@ -22,15 +22,6 @@ prefix_rule(
 prefix_rule(
     pattern=[
         "gh",
-        "issue",
-        "create",
-    ],
-    decision="prompt",
-)
-
-prefix_rule(
-    pattern=[
-        "gh",
         "pr",
         [
             "close",
@@ -71,10 +62,128 @@ prefix_rule(
 
 prefix_rule(
     pattern=[
-        "jj",
-        "squash",
+        "kubectl",
+        [
+            "ctx",
+            "ns",
+        ],
     ],
-    decision="prompt",
+    decision="forbidden",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "config",
+        "use-context",
+    ],
+    decision="forbidden",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "config",
+        [
+            "delete-cluster",
+            "delete-context",
+            "delete-user",
+            "rename-context",
+            "set-cluster",
+            "set-context",
+            "set-credentials",
+        ],
+    ],
+    decision="forbidden",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "config",
+        "unset",
+    ],
+    decision="forbidden",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "config",
+        "set",
+    ],
+    decision="forbidden",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "kuberc",
+        "set",
+    ],
+    decision="forbidden",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "delete",
+    ],
+    decision="forbidden",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "drain",
+    ],
+    decision="forbidden",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "cordon",
+    ],
+    decision="forbidden",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "replace",
+    ],
+    decision="forbidden",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "rollout",
+        "undo",
+    ],
+    decision="forbidden",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "certificate",
+        [
+            "approve",
+            "deny",
+        ],
+    ],
+    decision="forbidden",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "auth",
+        "reconcile",
+    ],
+    decision="forbidden",
 )
 
 prefix_rule(
@@ -85,12 +194,9 @@ prefix_rule(
             "apply",
             "attach",
             "autoscale",
-            "cordon",
             "cp",
             "create",
             "debug",
-            "delete",
-            "drain",
             "edit",
             "exec",
             "expose",
@@ -98,7 +204,6 @@ prefix_rule(
             "patch",
             "port-forward",
             "proxy",
-            "replace",
             "run",
             "scale",
             "set",
@@ -106,7 +211,20 @@ prefix_rule(
             "uncordon",
         ],
     ],
-    decision="prompt",
+    decision="forbidden",
+)
+
+prefix_rule(
+    pattern=[
+        "kubectl",
+        "rollout",
+        [
+            "pause",
+            "restart",
+            "resume",
+        ],
+    ],
+    decision="forbidden",
 )
 
 prefix_rule(
@@ -149,27 +267,6 @@ prefix_rule(
 prefix_rule(
     pattern=[
         "kubectl",
-        "auth",
-        "reconcile",
-    ],
-    decision="prompt",
-)
-
-prefix_rule(
-    pattern=[
-        "kubectl",
-        "certificate",
-        [
-            "approve",
-            "deny",
-        ],
-    ],
-    decision="prompt",
-)
-
-prefix_rule(
-    pattern=[
-        "kubectl",
         "config",
         [
             "current-context",
@@ -180,46 +277,6 @@ prefix_rule(
         ],
     ],
     decision="allow",
-)
-
-prefix_rule(
-    pattern=[
-        "kubectl",
-        "config",
-        [
-            "delete-cluster",
-            "delete-context",
-            "delete-user",
-            "rename-context",
-            "set",
-            "set-cluster",
-            "set-context",
-            "set-credentials",
-            "unset",
-            "use-context",
-        ],
-    ],
-    decision="prompt",
-)
-
-prefix_rule(
-    pattern=[
-        "kubectl",
-        [
-            "ctx",
-            "ns",
-        ],
-    ],
-    decision="prompt",
-)
-
-prefix_rule(
-    pattern=[
-        "kubectl",
-        "kuberc",
-        "set",
-    ],
-    decision="prompt",
 )
 
 prefix_rule(
@@ -250,18 +307,4 @@ prefix_rule(
         ],
     ],
     decision="allow",
-)
-
-prefix_rule(
-    pattern=[
-        "kubectl",
-        "rollout",
-        [
-            "pause",
-            "restart",
-            "resume",
-            "undo",
-        ],
-    ],
-    decision="prompt",
 )

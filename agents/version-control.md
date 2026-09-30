@@ -4,9 +4,7 @@
   - This includes read-only commands: use `jj log`, `jj diff` and `jj show` rather than their `git` equivalents
 - You can use `gh` for GitHub-related work, but not `git` (only `jj`)
 - Do not push or fetch commits, bookmarks, branches, tags, etc. unless permitted
-- Do not edit commits
-- Default to making all edits in the working copy and do not squash unless permitted
-  - Do not edit commits directly to work around this
+- Default to making edits in the working copy
 
 ## Solving Conflicts
 
