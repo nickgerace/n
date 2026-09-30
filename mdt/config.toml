@@ -1,0 +1,5 @@
+code_bg_color = "reset"
+code_block_bg_color = "reset"
+
+# Rose Pine Dawn red keeps inline code legible on the light terminal background
+code_fg_color = "#b4637a"
