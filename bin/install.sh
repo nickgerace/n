@@ -88,43 +88,6 @@ function link {
   ln -s "$1" "$2"
 }
 
-function merge-json {
-  if [ ! -f "$1" ]; then
-    log-error "file does not exist: $1"
-    exit 1
-  fi
-
-  if [ ! -f "$2" ]; then
-    log "Skipping: $1 --> $2 (destination does not exist)"
-    return
-  fi
-
-  if ! command -v jq >/dev/null; then
-    log-error "jq is required to merge: $1"
-    exit 1
-  fi
-
-  local TMP
-  TMP=$(mktemp "$2.XXXXXX")
-
-  log "Merging: $1 --> $2"
-  if ! jq -s '
-    def merge($a; $b):
-      if ($a | type) == "object" and ($b | type) == "object" then
-        reduce ($b | keys_unsorted[]) as $k ($a; .[$k] = merge($a[$k]; $b[$k]))
-      elif ($a | type) == "array" and ($b | type) == "array" then
-        $a + ($b - $a)
-      elif $b == null then $a
-      else $b end;
-    merge(.[0]; .[1])
-  ' "$2" "$1" >"$TMP"; then
-    rm "$TMP"
-    log-error "could not merge: $1 --> $2"
-    exit 1
-  fi
-  mv "$TMP" "$2"
-}
-
 if [ "$BOOTSTRAP_PLATFORM" = "true" ]; then
   log "Checking if cargo is installed via rustup..."
   if ! command -v cargo; then
@@ -165,7 +128,7 @@ log "Setting up primary agent files..."
 link "$REPO/AGENTS.md" "$HOME/.claude/CLAUDE.md"
 link "$REPO/AGENTS.md" "$HOME/.codex/AGENTS.md"
 link "$REPO/codex/rules/agents.rules" "$HOME/.codex/rules/agents.rules"
-merge-json "$REPO/claude/rules.json" "$HOME/.claude/settings.json"
+link "$REPO/claude/settings.json" "$HOME/.claude/settings.json"
 
 log "Setting up agent reference files..."
 for file in "$REPO"/agents/*.md; do

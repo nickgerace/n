@@ -1,5 +1,6 @@
 {
   "permissions": {
+    "defaultMode": "auto",
     "allow": [
       "Bash(kubectl api-resources *)",
       "Bash(kubectl api-versions *)",
@@ -100,5 +101,14 @@
       "Bash(kubectl taint *)",
       "Bash(kubectl uncordon *)"
     ]
-  }
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledPlugins": {
+    "rust-analyzer-lsp@claude-plugins-official": true
+  },
+  "autoMemoryEnabled": false,
+  "skipDangerousModePermissionPrompt": true,
+  "skipWorkflowUsageWarning": true,
+  "theme": "light",
+  "skipAutoPermissionPrompt": true
 }
