@@ -99,7 +99,9 @@
       "Bash(kubectl scale *)",
       "Bash(kubectl set *)",
       "Bash(kubectl taint *)",
-      "Bash(kubectl uncordon *)"
+      "Bash(kubectl uncordon *)",
+      "Bash(tofu apply)",
+      "Bash(tofu apply *)"
     ]
   },
   "enableAllProjectMcpServers": true,

@@ -50,6 +50,14 @@ prefix_rule(
 
 prefix_rule(
     pattern=[
+        "tofu",
+        "apply",
+    ],
+    decision="forbidden",
+)
+
+prefix_rule(
+    pattern=[
         "jj",
         "git",
         [
