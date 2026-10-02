@@ -1,11 +1,11 @@
 default:
     @just --list
 
-run:
-    @./scripts/run.sh
+run distribution="nixos":
+    @./scripts/run.sh {{distribution}}
 
-shell:
-    @./scripts/shell.sh
+shell distribution="nixos":
+    @./scripts/shell.sh {{distribution}}
 
-stop:
-    @./scripts/stop.sh
+stop distribution="nixos":
+    @./scripts/stop.sh {{distribution}}
