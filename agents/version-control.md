@@ -18,3 +18,4 @@ Squash only when explicitly told to solve conflicts, and only changes that exist
 
 - Keep commit titles concise and accurate; aim for 50 characters or fewer when that reads naturally
 - Some repositories need a prefix in the format "<domain>: " and others do not, so check recent titles with `jj log` and match what the repository already does
+- The description should be concise, human readadble and lean on intent, purpose, goals, gotchas, considerations, etc. rather than describing what the change does line-by-line (the diff already does this)
