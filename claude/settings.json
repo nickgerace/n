@@ -104,6 +104,19 @@
       "Bash(tofu apply *)"
     ]
   },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$HOME/src/n/claude/hooks/jj-session-name.sh\""
+          }
+        ]
+      }
+    ]
+  },
   "enableAllProjectMcpServers": true,
   "enabledPlugins": {
     "rust-analyzer-lsp@claude-plugins-official": true
