@@ -13,10 +13,12 @@ workspaces="$(jj --ignore-working-copy workspace list \
   -T 'json({"name" => name, "root" => root}) ++ "\n"' \
   2>/dev/null)" || exit 0
 
-jq -s --arg root "$root" --arg repo "${root##*/}" '
+hash="$(jq -r '.session_id[:8]' <<<"$input")"
+
+jq -s --arg root "$root" --arg repo "${root##*/}" --arg hash "$hash" '
   (if length == 1 then $repo
    else .[] | select(.root == $root) | .name
-   end) as $title |
+   end + "-" + $hash) as $title |
   {hookSpecificOutput: {
     hookEventName: "SessionStart",
     sessionTitle: $title
