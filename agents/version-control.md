@@ -5,10 +5,7 @@
 - You can use `gh` for GitHub-related work, but not `git` (only `jj`)
 - Do not push or fetch commits, bookmarks, branches, tags, etc. unless permitted
 - Default to making edits in the working copy
-
-## Solving Conflicts
-
-Squash only when explicitly told to solve conflicts, and only changes that exist solely to resolve those conflicts.
+- Squash when solving conflicts
 
 ## Splitting Changes
 
