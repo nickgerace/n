@@ -1,5 +1,5 @@
 # Comments in code, scripts, manifests, text files, config files, etc.
 
-- Add a comment only when it helps a reader understand something the code cannot make clear, such as a constraint, tradeoff or surprising behavior
-- Prefer clear code and fewer comments. Delete comments that repeat the code, are vague, have become inaccurate or would be considered "slop".
-- Keep useful comments concise, specific, accurate and natural. Update when the code changes.
+- Never add comments
+- You can modify comments purely if they have become incorrect or misleading as a result of work in the working copy
+- You can delete comments
