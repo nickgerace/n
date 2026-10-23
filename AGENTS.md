@@ -13,6 +13,7 @@ If a file's contents are not already in your context, read it before acting in t
 - Interacting with code review platforms (e.g. GitHub, `gh` CLI): @~/.config/agents/code-review-platforms.md
 - Interacting with issue trackers (e.g. Linear, GitHub, `gh` CLI): @~/.config/agents/issue-trackers.md
 - kubectl: @~/.config/agents/kubectl.md
+- Logging, telemetry and metrics: @~/.config/agents/logging-telemetry-metrics.md
 - Manifests (e.g. tofu and terraform files, k8s and kustomize yaml): @~/.config/agents/manifests.md
 - Markdown files: @~/.config/agents/markdown-files.md
 - Reviewing changes: @~/.config/agents/reviewing-changes.md
