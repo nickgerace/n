@@ -37,17 +37,7 @@ function kge {
 }
 
 function kgpa {
-  setopt local_options pipefail
-  if (( $# < 1 || $# > 2 )) || { (( $# == 2 )) && ! _n_boolean "$2"; }; then
-    print -u2 'usage: kgpa <context> [true|false]'
-    return 2
-  fi
-  # TODO(nick): fix this to make it actually usable.
-  if [[ "${2:-false}" == true ]]; then
-    k "$1" get pods -A | awk 'NR == 1 || ($1 != "kube-system" && $1 != "gmp-system" && $1 != "gke-managed-cim")'
-  else
-    k "$1" get pods -A
-  fi
+  kubectl get pods -A | awk 'NR == 1 || ($1 != "kube-system" && $1 != "gmp-system" && $1 != "gke-managed-cim")'
 }
 
 function kubectl-dead-pods {
