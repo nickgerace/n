@@ -9,6 +9,7 @@ Each area below has its own rule file, and every rule in it is mandatory.
 If a file's contents are not already in your context, read it before acting in that area.
 
 - buck2: @~/.config/agents/buck2.md
+- Commands (e.g. bash, shell): @~/.config/agents/commands.md
 - Comments in code, scripts, manifests, text files, config files, etc.: @~/.config/agents/comments.md
 - Interacting with code review platforms (e.g. GitHub, `gh` CLI): @~/.config/agents/code-review-platforms.md
 - Interacting with issue trackers (e.g. Linear, GitHub, `gh` CLI): @~/.config/agents/issue-trackers.md
