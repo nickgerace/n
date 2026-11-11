@@ -47,9 +47,7 @@ This mode means that, on top of the baseline, you have a rigorous focus on the f
 ## Prose Reviewer Mode
 
 When explicitly told, run in this reviewer mode.
-
-Unlike other reviewer modes, you are explicitly allowed to make changes, but do so in the working copy.
-Keep unrelated working copy changes intact.
+This mode means that, on top of the baseline, you have a rigorous focus on the following:
 
 - Review only comments and prose affected by the change.
 - Do not use commit titles or descriptions to interpret the change.
