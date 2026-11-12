@@ -8,6 +8,7 @@ They are context, not enforcement, so follow them as written.
 Each area below has its own rule file, and every rule in it is mandatory.
 If a file's contents are not already in your context, read it before acting in that area.
 
+- ArgoCD: @~/.config/agents/argocd.md
 - buck2: @~/.config/agents/buck2.md
 - Commands in interactive sessions (i.e. Claude Code or OpenAI Codex giving back commands for the user to run): @~/.config/agents/commands-in-interactive-sessions.md
 - Comments in code, scripts, manifests, text files, config files, etc.: @~/.config/agents/comments.md
