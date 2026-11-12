@@ -9,7 +9,12 @@ diff-formatter = "difft"
 [merge-tools.difft]
 diff-args = ["--color=always", "--display=side-by-side", "--width=$width", "--sort-paths", "$left", "$right"]
 
+[revset-aliases]
+"active()" = "bookmarks() & mine() & mutable()"
+
 [aliases]
+active = ["log", "-r", "active()"]
+rebase-all = ["rebase", "-b", "active()", "-o", "trunk()"]
 stack = ["log", "-r", "@ | trunk()..@ | trunk()"]
 
 [templates]
