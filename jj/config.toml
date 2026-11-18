@@ -14,6 +14,7 @@ diff-args = ["--color=always", "--display=side-by-side", "--width=$width", "--so
 
 [aliases]
 active = ["log", "-r", "active()"]
+push-active = ["git", "push", "-r", "active() & ~conflicts() & ~divergent()"]
 rebase-all = ["rebase", "-b", "active()", "-o", "trunk()"]
 stack = ["log", "-r", "@ | trunk()..@ | trunk()"]
 
