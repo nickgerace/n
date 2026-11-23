@@ -14,6 +14,12 @@ diff-args = ["--color=always", "--display=side-by-side", "--width=$width", "--so
 
 [aliases]
 active = ["log", "-r", "active()"]
+bl = ["bookmark", "list", "-T", """
+if(!remote && !normal_target.contained_in("trunk()"),
+  name ++ " --> " ++ normal_target.change_id().shortest() ++ " --> " ++
+  normal_target.description().first_line() ++ "\\n"
+)
+"""]
 push-active = ["git", "push", "-r", "active() & ~conflicts() & ~divergent()"]
 rebase-all = ["rebase", "-b", "active()", "-o", "trunk()"]
 stack = ["log", "-r", "@ | trunk()..@ | trunk()"]
