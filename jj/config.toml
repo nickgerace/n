@@ -10,7 +10,7 @@ diff-formatter = "difft"
 diff-args = ["--color=always", "--display=side-by-side", "--width=$width", "--sort-paths", "$left", "$right"]
 
 [revset-aliases]
-"active()" = "bookmarks() & mine() & mutable()"
+"active()" = "mine() & mutable()"
 
 [aliases]
 a = ["abandon"]
