@@ -16,7 +16,7 @@ diff-args = ["--color=always", "--display=side-by-side", "--width=$width", "--so
 a = ["abandon"]
 active = ["log", "-r", "active()"]
 bl = ["bookmark", "list", "-T", """
-if(!remote && !normal_target.contained_in("trunk()"),
+if(!remote && normal_target && !normal_target.contained_in("trunk()"),
   name ++ " --> " ++ normal_target.change_id().shortest() ++ " --> " ++
   normal_target.description().first_line() ++ "\\n"
 )
