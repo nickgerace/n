@@ -13,6 +13,7 @@ diff-args = ["--color=always", "--display=side-by-side", "--width=$width", "--so
 "active()" = "bookmarks() & mine() & mutable()"
 
 [aliases]
+a = ["abandon"]
 active = ["log", "-r", "active()"]
 bl = ["bookmark", "list", "-T", """
 if(!remote && !normal_target.contained_in("trunk()"),
