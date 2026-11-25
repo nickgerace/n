@@ -11,6 +11,7 @@ diff-args = ["--color=always", "--display=side-by-side", "--width=$width", "--so
 
 [revset-aliases]
 "active()" = "mine() & mutable()"
+"trunk_working_copies()" = "working_copies() & mutable() & children(::trunk())"
 
 [aliases]
 a = ["abandon"]
@@ -22,7 +23,7 @@ if(!remote && normal_target && !normal_target.contained_in("trunk()"),
 )
 """]
 push-active = ["git", "push", "-r", "active() & ~conflicts() & ~divergent()"]
-rebase-all = ["rebase", "-b", "active()", "-o", "trunk()"]
+rebase-all = ["rebase", "-b", "active() | trunk_working_copies()", "-o", "trunk()"]
 stack = ["log", "-r", "@ | trunk()..@ | trunk()"]
 
 [templates]
